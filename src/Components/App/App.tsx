@@ -8,12 +8,13 @@ class App extends Component {
   constructor(props: {}) {
     super(props)
     this.state = {
+      lists: [],
     }
   }
 
   componentDidMount() {
     getLists()
-    .then(data => console.log(data))
+    .then(data => this.setState({ lists: data.results }))
 
 // This is only here as a test
     getTypeOf( "hardcover-fiction" )
