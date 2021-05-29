@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { getLists, getTypeOf } from '../../api-calls'
 
 import Navbar from '../Navbar/Navbar'
 import './App.css';
@@ -8,6 +9,15 @@ class App extends Component {
     super(props)
     this.state = {
     }
+  }
+
+  componentDidMount() {
+    getLists()
+    .then(data => console.log(data))
+
+// This is only here as a test
+    getTypeOf( "hardcover-fiction" )
+    .then(data => console.log(data))
   }
 
   render() {
