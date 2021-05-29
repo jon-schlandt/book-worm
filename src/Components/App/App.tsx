@@ -1,30 +1,39 @@
 import React, { Component } from 'react'
 import { getLists, getTypeOf } from '../../api-calls'
 
+// import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
 import './App.css';
 
-class App extends Component {
+type Props = {}
+type State = { lists: {} }
+
+class App extends React.Component<Props, State> {
   constructor(props: {}) {
     super(props)
     this.state = {
-      lists: [],
+      lists: {},
     }
   }
 
   componentDidMount() {
     getLists()
-    .then(data => this.setState({ lists: data.results }))
+    .then(data => this.setState({ lists: data }))
+    console.log("STATE", this.state.lists)
 
 // This is only here as a test
-    getTypeOf( "hardcover-fiction" )
-    .then(data => console.log(data))
+//     getTypeOf( "hardcover-fiction" )
+//     .then(data => console.log(data))
   }
 
   render() {
+    console.log("RENDER STATE", this.state.lists)
     return (
       <main className="App">
         <Navbar />
+        <ul>
+
+        </ul>
       </main>
     )
   }
