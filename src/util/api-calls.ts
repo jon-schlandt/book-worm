@@ -3,7 +3,7 @@ import {cleanListData} from './utilities'
 // ***** ----- Fetching ----- ***** //
 
 export const getLists = () => {
-  return fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b')
+  return fetch('http://httpstat.us/416')
     .then(response => {
       if (response.ok) {
         return response.json()
@@ -25,11 +25,11 @@ export const getTypeOf = ( typeOf: string ) => {
 
 function handleError(status: number) {
   if (status === 404) {
-    throw ('Sorry, page not found.')
+    throw ('404 | Sorry, page not found.')
   }
 
   if (status === 500) {
-    throw ('Sorry, this page isn\'t working.')
+    throw ('500 | Sorry, this page isn\'t working.')
   }
 
   throw ('Sorry, something went wrong.')
