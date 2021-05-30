@@ -1,4 +1,26 @@
 .nav {
+  display: flex;
+  justify-content: space-between;
   background-color: #790237;
   color: #F5F1E1;
+  padding: 15px;
+
+}
+
+
+h1 {
+  font-size: 45px;
+}
+
+
+.nav-links, h1 {
+  display: flex;
+  padding: 15px;
+  margin: 0 40px 0 0;
+  align-items: center;
+}
+
+
+.nav-links > li {
+  padding: 0 15px;
 }
