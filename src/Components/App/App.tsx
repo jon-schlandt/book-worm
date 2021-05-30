@@ -38,12 +38,9 @@ class App extends React.Component<Props, State> {
     return (
       <main className="App">
         <Navbar />
-        <ul>
         {!this.state.list.length 
           ? <h2>Loading...</h2>
-          : <List list={this.state.list}/>
-        }
-        </ul>
+          : <List list={this.state.list} />}
       </main>
     )
   }

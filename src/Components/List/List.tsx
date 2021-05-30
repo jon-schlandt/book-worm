@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import './List.css'
 
 type ListProps = {
@@ -8,15 +8,25 @@ type ListProps = {
   }[]
 }
 
-const List: React.FC<ListProps> = ( {list}: ListProps ) => {
+const List = ( {list}: ListProps ) => {
 
-  const listItems = list.map(item => {
+  const listItems = list.map((item, index) => {
     return (
-      // <li className='listItem' id={item.list_name_encoded} >{item.display_name}</li>
-      <h1>FML {item}</h1>
+      <li
+        key={index} 
+        className='listItem' 
+        id={item.queryName} 
+      >
+        {item.displayName}
+      </li>
     )
   })
-  return <div></div>
+
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  )
 }
 
 export default List
