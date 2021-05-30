@@ -1,29 +1,45 @@
-import React, { Component } from 'react'
-import { getLists, getTypeOf } from '../../api-calls'
+import React from 'react'
+import { getLists } from '../../util/api-calls'
 
+import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
 import './App.css';
 
-class App extends Component {
-  constructor(props: {}) {
+type Props = {}
+type State = {
+  list: {
+    displayName: string,
+    queryName: string
+  }[] | [] 
+}
+
+class App extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = {
+      list: [],
     }
   }
 
   componentDidMount() {
     getLists()
-    .then(data => console.log(data))
+    .then(data => {
+      this.setState({ list: data }, () => console.log(data))
+    })
+    
 
 // This is only here as a test
-    getTypeOf( "hardcover-fiction" )
-    .then(data => console.log(data))
+//     getTypeOf( "hardcover-fiction" )
+//     .then(data => console.log(data))
   }
 
   render() {
     return (
       <main className="App">
         <Navbar />
+        {!this.state.list.length 
+          ? <h2>Loading...</h2>
+          : <List list={this.state.list} />}
       </main>
     )
   }
