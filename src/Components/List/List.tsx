@@ -30,4 +30,3 @@ const List = ( {list}: ListProps ) => {
 }
 
 export default List
-// export {}

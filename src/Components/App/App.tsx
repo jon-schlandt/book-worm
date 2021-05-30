@@ -34,7 +34,6 @@ class App extends React.Component<Props, State> {
   }
 
   render() {
-    // console.log("RENDER STATE", this.state.lists)
     return (
       <main className="App">
         <Navbar />
