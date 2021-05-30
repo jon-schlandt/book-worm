@@ -6,7 +6,12 @@ import Navbar from '../Navbar/Navbar'
 import './App.css';
 
 type Props = {}
-type State = { }
+type State = {
+  lists: {
+    displayName: string,
+    queryName: string
+  }[] | [] 
+}
 
 class App extends React.Component<Props, State> {
   constructor(props: {}) {
@@ -18,7 +23,9 @@ class App extends React.Component<Props, State> {
 
   componentDidMount() {
     getLists()
-    .then(data => this.setState({ lists: data.results }, () => console.log("STATE", this.state.lists)))
+    .then(data => {
+      this.setState({ lists: data })
+    })
     
 
 // This is only here as a test
@@ -27,7 +34,7 @@ class App extends React.Component<Props, State> {
   }
 
   render() {
-    console.log("RENDER STATE", this.state.lists)
+    // console.log("RENDER STATE", this.state.lists)
     return (
       <main className="App">
         <Navbar />

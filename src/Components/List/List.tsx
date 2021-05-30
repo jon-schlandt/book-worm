@@ -1,8 +1,8 @@
 // import React from 'react'
 // import '.List.css'
 
-// const List = ( list: {} ) => {
-//
+// const List: React.FC = ( list: {} ) => {
+
 //   const listItems = list.map(item => {
 //     return (
 //       // <li className='listItem' id={item.list_name_encoded} >{item.display_name}</li>
@@ -11,6 +11,6 @@
 //   })
 //   return <div></div>
 // }
-//
+
 // export default List
 export {}
