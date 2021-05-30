@@ -1,14 +1,9 @@
 import {cleanListData} from './utilities'
 
-// Maybe getCategoryOf and error handling?
-
-const listEndpoint = 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b'
-const errorEndpoint = 'https://httpstat.us/500'
-
 // ***** ----- Fetching ----- ***** //
 
 export const getLists = () => {
-  return fetch(errorEndpoint)
+  return fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b')
     .then(response => {
       if (response.ok) {
         return response.json()
@@ -19,6 +14,8 @@ export const getLists = () => {
     .then(data => cleanListData(data.results))
 }
 
+// Maybe getCategoryOf?
+
 export const getTypeOf = ( typeOf: string ) => {
   return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${typeOf}.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b`)
     .then(response => response.json())
@@ -28,12 +25,12 @@ export const getTypeOf = ( typeOf: string ) => {
 
 function handleError(status: number) {
   if (status === 404) {
-    throw Error('404')
+    throw ('Sorry, page not found.')
   }
 
   if (status === 500) {
-    throw Error('500')
+    throw ('Sorry, this page isn\'t working.')
   }
 
-  throw Error('Sorry, something went wrong.')
+  throw ('Sorry, something went wrong.')
 }
