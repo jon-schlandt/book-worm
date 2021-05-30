@@ -1,30 +1,30 @@
-import React, { Component } from 'react'
-import { getLists, getTypeOf } from '../../util/api-calls'
+import React from 'react'
+import { getLists } from '../../util/api-calls'
 
-// import List from '../List/List'
+import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
 import './App.css';
 
 type Props = {}
 type State = {
-  lists: {
+  list: {
     displayName: string,
     queryName: string
   }[] | [] 
 }
 
 class App extends React.Component<Props, State> {
-  constructor(props: {}) {
+  constructor(props: Props) {
     super(props)
     this.state = {
-      lists: [],
+      list: [],
     }
   }
 
   componentDidMount() {
     getLists()
     .then(data => {
-      this.setState({ lists: data })
+      this.setState({ list: data }, () => console.log(data))
     })
     
 
@@ -39,7 +39,10 @@ class App extends React.Component<Props, State> {
       <main className="App">
         <Navbar />
         <ul>
-
+        {!this.state.list.length 
+          ? <h2>Loading...</h2>
+          : <List list={this.state.list}/>
+        }
         </ul>
       </main>
     )
