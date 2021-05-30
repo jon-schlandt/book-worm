@@ -28,7 +28,7 @@ class App extends React.Component<Props, State> {
       .then(data => {
         this.setState({ list: data })
       })
-      .catch(error => this.setState({ error }, () => console.log(this.state)))
+      .catch(error => this.setState({ error }))
   }
     
 // This is only here as a test
