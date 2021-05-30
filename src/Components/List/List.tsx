@@ -11,21 +11,23 @@ type ListProps = {
 const List = ( {list}: ListProps ) => {
 
   const listItems = list.map((item, index) => {
-    return (
-      <li
-        key={index} 
-        className='listItem' 
-        id={item.queryName} 
-      >
-        {item.displayName}
-      </li>
-    )
-  })
+     return (
+       <li
+         key={index}
+         className='listItem'
+         id={item.queryName}
+       >
+         {item.displayName}
+       </li>
+     )
+   })
 
   return (
-    <ul>
-      {listItems}
-    </ul>
+    <div className="list-background">
+      <ul className="list-container">
+        {listItems}
+      </ul>
+    </div>
   )
 }
 
