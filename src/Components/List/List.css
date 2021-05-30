@@ -11,11 +11,24 @@
 }
 
 .list-container {
-  background-color: white;
+  background-color: #F5F1E1;
   overflow: scroll;
+  padding: 10px 30px;
+  opacity: .73;
 
 }
 
 .list-container::-webkit-scrollbar {
   display: none;
+}
+
+li {
+  list-style: none;
+  padding: 3px;
+  font-weight: bolder;
+}
+
+.listItem {
+  color: #790237;
+  font-size: 26px;
 }
