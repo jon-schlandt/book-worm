@@ -3,7 +3,7 @@ import {cleanListData} from './utilities'
 // ***** ----- Fetching ----- ***** //
 
 export const getLists = () => {
-  return fetch('http://httpstat.us/416')
+  return fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b')
     .then(response => {
       if (response.ok) {
         return response.json()
