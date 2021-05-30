@@ -8,11 +8,11 @@ describe('Details', () => {
         .get('.nav').should('be.visible')
         .get('.nav>h1').contains('BookWorm')
         .get('.nav>ul>li').should('be.visible')
-        .get('.nav>ul>li').eq(0).should('contain', 'Home')
-        .get('.nav>ul>li').eq(1).should('contain', 'Home')
-        .get('.nav').contains('Home')
-        .get('.nav').contains('Favorites')
-        .get('h2').should('not.exist')
+        // .get('.nav>ul>li').eq(0).should('contain', 'Home')
+        // .get('.nav>ul>li').eq(1).should('contain', 'Home')
+        // .get('.nav').contains('Home')
+        // .get('.nav').contains('Favorites')
+        // .get('h2').should('not.exist')
     })
   
     it('Should show list of book types', () => {
