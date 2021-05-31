@@ -43,7 +43,7 @@ class App extends React.Component<Props, State> {
         <Navbar />
         {this.state.error && <h2>{this.state.error}</h2>}
         <Switch>
-        
+
           <Route
             exact path='/'
             render={ () => {
@@ -56,7 +56,7 @@ class App extends React.Component<Props, State> {
           />
 
           <Route
-            exact path='/:queryName'
+            exact path='/bookshelf/:queryName'
             render={ ({ match }) => {
               const { queryName } = match.params
               return (
@@ -64,6 +64,8 @@ class App extends React.Component<Props, State> {
               )
             }}
           />
+
+
         </Switch>
       </main>
     )

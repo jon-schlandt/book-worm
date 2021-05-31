@@ -13,7 +13,7 @@ const List = ( {list}: ListProps ) => {
 
   const listItems = list.map((item, index) => {
      return (
-      <Link to={`/${item.queryName}`} key={index} >
+      <Link to={`/bookshelf/${item.queryName}`} key={index} >
          <li
            className='listItem'
            id={item.queryName}
