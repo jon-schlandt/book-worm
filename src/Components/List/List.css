@@ -10,6 +10,7 @@
   background-image: url('https://assets.readitforward.com/wp-content/uploads/2020/08/norbert-toth-I1oL89qxefc-unsplash-830x625.jpg');
 }
 
+
 .list-container {
   background-color: #F5F1E1;
   overflow: scroll;
@@ -18,15 +19,26 @@
 
 }
 
+
 .list-container::-webkit-scrollbar {
   display: none;
 }
+
 
 li {
   list-style: none;
   padding: 3px;
   font-weight: bolder;
 }
+
+
+li:hover {
+  cursor: pointer;
+  background-color:#790237;
+  color: #F5F1E1;
+  border-radius: 7px;
+}
+
 
 .listItem {
   color: #790237;
