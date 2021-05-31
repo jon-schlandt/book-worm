@@ -5,6 +5,16 @@ type ListData = {
   list_name_encoded: string
 }[]
 
+type BookData = {
+  rank: number,
+  publisher: string,
+  description: string,
+  title: string,
+  author: string,
+  book_image: string,
+  amazon_product_url: string,
+}[]
+
 export function cleanListData(listData: ListData) {
   const cleanedListData = listData.map(datum => {
     return {
@@ -15,3 +25,6 @@ export function cleanListData(listData: ListData) {
 
   return cleanedListData
 }
+
+
+
