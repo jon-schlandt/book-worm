@@ -42,17 +42,25 @@ class App extends React.Component<Props, State> {
       <main className="App">
         <Navbar />
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.list.length
-          ? !this.state.error && <h2>Loading...</h2>
-          : <List list={this.state.list} />
-        }
         <Switch>
+        
+          <Route
+            exact path='/'
+            render={ () => {
+              return(
+                !this.state.list.length
+                  ? !this.state.error && <h2>Loading...</h2>
+                  : <List list={this.state.list} />
+              )
+            }}
+          />
+
           <Route
             exact path='/:queryName'
             render={ ({ match }) => {
               const { queryName } = match.params
               return (
-                <Bookshelf queryName={queryName}/>
+                <Bookshelf queryID={queryName}/>
               )
             }}
           />
