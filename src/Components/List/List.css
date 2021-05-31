@@ -31,6 +31,10 @@ li {
   font-weight: bolder;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 li:hover {
   cursor: pointer;

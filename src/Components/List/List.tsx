@@ -1,5 +1,6 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import './List.css'
+import { Link } from 'react-router-dom'
 
 type ListProps = {
   list: {
@@ -12,13 +13,14 @@ const List = ( {list}: ListProps ) => {
 
   const listItems = list.map((item, index) => {
      return (
-       <li
-         key={index}
-         className='listItem'
-         id={item.queryName}
-       >
-         {item.displayName}
-       </li>
+      <Link to={`/bookshelf/${item.queryName}`} key={index} >
+         <li
+           className='listItem'
+           id={item.queryName}
+         >
+           {item.displayName}
+         </li>
+      </Link>
      )
    })
 
