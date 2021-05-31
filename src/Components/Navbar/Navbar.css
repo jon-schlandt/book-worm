@@ -24,3 +24,11 @@ h1 {
 .nav-links > li {
   padding: 0 15px;
 }
+
+
+.nav-links > li:hover {
+  cursor: pointer;
+  background-color: #F5F1E1;
+  color: #790237;
+  border-radius: 7px;
+}
