@@ -2,6 +2,7 @@ import React from 'react'
 import { getLists } from '../../util/api-calls'
 import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
+import Bookshelf from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 
@@ -46,7 +47,15 @@ class App extends React.Component<Props, State> {
           : <List list={this.state.list} />
         }
         <Switch>
-
+          <Route
+            exact path='/:queryName'
+            render={ ({ match }) => {
+              const { queryName } = match.params
+              return (
+                <Bookshelf queryName={queryName}/>
+              )
+            }}
+          />
         </Switch>
       </main>
     )
