@@ -167,7 +167,8 @@ Cypress.Commands.add('bookshelf', () => {
           book_uri: "nyt://book/010af0b7-2a30-598f-97f5-1ed63c3426e1"
         }
       ]
-    })
+    }
+  })
     cy.visit('http://localhost:3000')
       .get('.listItem').eq(0).click()
   })
