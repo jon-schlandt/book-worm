@@ -1,4 +1,4 @@
-import {cleanListData} from './utilities'
+import {cleanListData, cleanBookData} from './utilities'
 
 // ***** ----- Fetching ----- ***** //
 
@@ -18,7 +18,14 @@ export const getLists = () => {
 
 export const getTypeOf = ( typeOf: string ) => {
   return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${typeOf}.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b`)
-    .then(response => response.json())
+  .then(response => {
+    if (response.ok) {
+      return response.json()
+    }
+
+    handleError(response.status)
+  })
+  .then(data => cleanBookData(data.results.books))
 }
 
 // ***** ----- Error Handling ----- ***** //
