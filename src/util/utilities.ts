@@ -26,5 +26,17 @@ export function cleanListData(listData: ListData) {
   return cleanedListData
 }
 
-
-
+export function cleanBookData( bookData: BookData ) {
+  const cleanedBookData = bookData.map(book => {
+    return {
+      rank: book.rank,
+      publisher: book.publisher,
+      description: book.description,
+      title: book.title,
+      author: book.author,
+      bookImage: book.book_image,
+      amazonProductUrl: book.amazon_product_url
+    }
+  })
+  return cleanedBookData
+}
