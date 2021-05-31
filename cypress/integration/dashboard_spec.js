@@ -31,5 +31,5 @@ describe('Details', () => {
         .get('.list-container').should('not.exist')
         .get('.nav').should('be.visible')
     })
-    
+
 });
