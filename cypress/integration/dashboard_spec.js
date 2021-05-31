@@ -14,7 +14,7 @@ describe('Details', () => {
         .get('.nav').contains('Favorites')
         .get('h2').should('not.exist')
     })
-  
+
     it('Should show list of book types', () => {
       cy.get('h2').should('be.visible')
         .get('h2').contains('Loading...')
@@ -25,5 +25,11 @@ describe('Details', () => {
         .get('.listItem').eq(1).should('contain', 'Combined Print & E-Book Nonfiction')
         .get('h2').should('not.exist')
     })
+
+    it('Should not display the list of book types when a list item is clicked', () => {
+      cy.get('.listItem').eq(0).click()
+        .get('.list-container').should('not.exist')
+        .get('.nav').should('be.visible')
+    })
+    
 });
-  

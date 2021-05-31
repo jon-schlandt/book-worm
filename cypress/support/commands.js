@@ -24,4 +24,5 @@ Cypress.Commands.add('load', () => {
     })
     cy.visit('http://localhost:3000');
   })
-  
+
+  // Cypress.Commands.add('')
