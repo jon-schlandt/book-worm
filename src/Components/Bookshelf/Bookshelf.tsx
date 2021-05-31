@@ -52,7 +52,11 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
     return (
       !this.state.books ? <h3>Loading</h3>
-      : <div className='bookshelf'>{bookCards}</div>
+      : <div className='bookshelf-background'>
+          <section className='bookshelf'>
+            {bookCards}
+          </section>
+        </div>
     )
   }
 }
