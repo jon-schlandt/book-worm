@@ -8,6 +8,9 @@ type BookshelfProps = {
 class Bookshelf extends React.Component<BookshelfProps> {
   constructor(props: BookshelfProps) {
     super(props)
+    this.state= {
+
+    }
   }
 
   render() {
