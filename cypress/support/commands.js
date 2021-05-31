@@ -168,6 +168,5 @@ Cypress.Commands.add('bookshelf', () => {
         }
       ]}
     })
-    cy.visit('http://localhost:3000')
-      .get('.listItem').eq(0).click()
+      cy.get('.listItem').eq(0).click()
   })
