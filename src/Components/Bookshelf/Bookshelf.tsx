@@ -1,6 +1,6 @@
 import React from 'react'
 import { getTypeOf } from '../../util/api-calls'
-import '../Book/Book'
+import Book from '../Book/Book'
 
 type BookshelfProps = {
   queryID: string
@@ -15,27 +15,43 @@ type BookshelfState = {
     author: string,
     bookImage: string,
     amazonProductUrl: string
-  }[] | []
+  }[] | null
 }
 
+
+
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
+  state: BookshelfState;
   constructor(props: BookshelfProps) {
     super(props)
     this.state= {
-      books: [],
+      books: null,
     }
   }
 
   componentDidMount() {
     getTypeOf( this.props.queryID )
-      .then(result => this.setState({books: result}, () =>  console.log("RESULT", this.state.books)))
-      console.log("STATE", this.state.books);
-      
+      .then(result => this.setState({books: result}))
   }
 
   render() {
+    let bookCards;
+    if(this.state.books) {
+    bookCards = this.state.books.map((book, index) => {
+      return (
+        <Book 
+        key= {index}
+        title= {book.title}
+        author= {book.author}
+        rank= {book.rank}
+        bookImage= {book.bookImage}
+        />
+      )
+    })
+    }
     return (
-      <h1>Hello</h1>
+      !this.state.books ? <h3>Loading</h3>
+      : <div>{bookCards}</div>
     )
   }
 }
