@@ -1,0 +1,21 @@
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: max-content auto;
+  column-gap: 24px;
+  row-gap: 24px;
+  justify-content: center;
+  margin: 24px auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .bookshelf {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  .bookshelf {
+    grid-template-columns: max-content;
+  }
+}

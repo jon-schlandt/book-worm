@@ -1,6 +1,7 @@
 import React from 'react'
 import { getTypeOf } from '../../util/api-calls'
 import Book from '../Book/Book'
+import '../Bookshelf/Bookshelf.css'
 
 type BookshelfProps = {
   queryID: string
@@ -51,7 +52,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
     return (
       !this.state.books ? <h3>Loading</h3>
-      : <div>{bookCards}</div>
+      : <div className='bookshelf'>{bookCards}</div>
     )
   }
 }
