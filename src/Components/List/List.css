@@ -32,6 +32,14 @@ li {
 }
 
 
+li:hover {
+  cursor: pointer;
+  background-color:#790237;
+  color: #F5F1E1;
+  border-radius: 7px;
+}
+
+
 .listItem {
   color: #790237;
   font-size: 26px;
