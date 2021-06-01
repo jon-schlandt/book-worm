@@ -7,7 +7,7 @@ type BookProps = {
     rank: number,
     bookImage: string,
     id: number,
-    handleClick: (title: string) => void
+    handleClick: (id: number) => void
 }
 
 function Book({ title, author, rank, bookImage, id, handleClick }: BookProps) {
