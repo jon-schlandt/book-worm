@@ -4,7 +4,9 @@ import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 
 type BookshelfProps = {
-  queryID: string
+  queryID?: string,
+  favoriteBooks?: Book[] | null,
+  addToFavorites?: (book: Book) => void
 }
 
 interface Book {
@@ -29,13 +31,12 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     super(props)
     this.state= {
       books: null,
-      favorites: null
     }
   }
 
 
   componentDidMount() {
-    if (this.props.queryID !== 'favorites') {
+    if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
     }
@@ -52,13 +53,13 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
 
-  addToFavorites = (book: Book) => {
-    if (!this.state.favorites) {
-      this.setState({ favorites: [book]})
-    } else {
-      this.setState({ favorites: [...this.state.favorites, book]})
-    }
-  }
+  // addToFavorites = (book: Book) => {
+  //   if (!this.state.favorites) {
+  //     this.setState({ favorites: [book]})
+  //   } else {
+  //     this.setState({ favorites: [...this.state.favorites, book]})
+  //   }
+  // }
 
   render() {
     let bookCards;
@@ -91,4 +92,4 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 }
 
 
-export default Bookshelf
+export { Bookshelf, Book }

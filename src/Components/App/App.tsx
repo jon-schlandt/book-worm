@@ -2,7 +2,7 @@ import React from 'react'
 import { getLists } from '../../util/api-calls'
 import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
-import Bookshelf from '../Bookshelf/Bookshelf'
+import { Bookshelf, Book } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 
@@ -23,7 +23,8 @@ class App extends React.Component<Props, State> {
     super(props)
     this.state = {
       list: [],
-      error: ''
+      error: '',
+      favorites: null
     }
   }
 
@@ -35,9 +36,13 @@ class App extends React.Component<Props, State> {
       .catch(error => this.setState({ error }))
   }
 
-// This is only here as a test
-//     getTypeOf( "hardcover-fiction" )
-//     .then(data => console.log(data))
+  addToFavorites = (book: Book) => {
+    if (!this.state.favorites) {
+      this.setState({ favorites: [book]})
+    } else {
+      this.setState({ favorites: [...this.state.favorites, book]})
+    }
+  }
 
   render() {
     return (
@@ -61,13 +66,21 @@ class App extends React.Component<Props, State> {
             exact path='/bookshelf/:queryName'
             render={ ({ match }) => {
               const { queryName } = match.params
-              return (
-                <Bookshelf
-                  queryID={queryName}
-                />
-              )
+              if (queryName !== 'favorites') {
+                return (
+                  <Bookshelf
+                    queryID={queryName}
+                    addToFavorites={this.addToFavorites}
+                  />
+                )
+              } else {
+                return (
+                  <Bookshelf
+                    favoriteBooks={this.state.favorites}
+                  />
+                )
               }
-            }
+            }}
           />
 
 
