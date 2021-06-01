@@ -40,6 +40,14 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       .then(result => this.setState({books: result}))
   }
 
+  addToFavorites = book => {
+    if (!this.state.books) {
+      this.setState({ books: [book]})
+    } else {
+      this.setState({ books: [...this.state.books, book]})
+    }
+  }
+
   render() {
     let bookCards;
     const whichData = (this.props.queryID === 'favorites') ? this.state.favorites : this.state.books
