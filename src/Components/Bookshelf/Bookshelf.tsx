@@ -39,7 +39,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   componentDidMount() {
     if (this.props.queryID) {
     getTypeOf( this.props.queryID )
-      .then(result => this.setState({books: result}))
+      .then(result => this.setState({books: result}, () => console.log(this.state.books)))
     }
   }
 
@@ -57,10 +57,11 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     let bookCards;
     const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
     if (whichData) {
-      bookCards = whichData.map((book, index) => {
+      bookCards = whichData.map(book => {
         return (
           <Book
-            key= {index}
+            key= {book.id}
+            id= {book.id}
             title= {book.title}
             author= {book.author}
             rank= {book.rank}

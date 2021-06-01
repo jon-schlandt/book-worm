@@ -6,10 +6,11 @@ type BookProps = {
     author: string,
     rank: number,
     bookImage: string,
+    id: number,
     handleClick: (title: string) => void
 }
 
-function Book({ title, author, rank, bookImage, handleClick }: BookProps) {
+function Book({ title, author, rank, bookImage, id, handleClick }: BookProps) {
     return (
         <article className='bookCard'>
             <img className='img' src={bookImage} alt='Book Cover'/>
@@ -17,7 +18,7 @@ function Book({ title, author, rank, bookImage, handleClick }: BookProps) {
             <h3 className='author'>{author}</h3>
             <span>
               <p className='rank'>Rank: {rank}</p>
-              <button onClick={ () => handleClick(title)}>Add to Favorites 🐛</button>
+              <button onClick={ () => handleClick(id)}>Add to Favorites 🐛</button>
             </span>
         </article>
       )
