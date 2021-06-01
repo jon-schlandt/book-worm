@@ -31,7 +31,7 @@ class App extends React.Component<Props, State> {
   componentDidMount() {
     getLists()
       .then(data => {
-        this.setState({ list: data }, () => console.log(this.state.list))
+        this.setState({ list: data })
       })
       .catch(error => this.setState({ error }))
   }
