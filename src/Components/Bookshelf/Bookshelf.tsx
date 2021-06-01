@@ -42,8 +42,10 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 
   render() {
     let bookCards;
-    if(this.state.books) {
-    bookCards = this.state.books.map((book, index) => {
+    const whichData = (this.props.queryID === 'favorites') ? this.state.favorites : this.state.books
+    if (whichData) {
+
+    bookCards = whichData.map((book, index) => {
       return (
         <Book
         key= {index}
@@ -54,7 +56,8 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
         />
       )
     })
-    }
+  }
+
     return (
       !this.state.books ? <h3>Loading</h3>
       : <div className='bookshelf-background'>
