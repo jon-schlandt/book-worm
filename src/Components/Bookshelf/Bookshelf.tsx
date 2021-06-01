@@ -80,8 +80,8 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     return (
       !this.state.books ? <h3>Loading</h3>
       : <div className='bookshelf-background'>
+          <h2>{this.props.queryID}</h2>
           <section className='bookshelf'>
-            <h2>{this.props.queryID}</h2>
             {bookCards}
           </section>
         </div>
