@@ -1,7 +1,4 @@
 .bookshelf-background {
-  background-image: url('https://assets.readitforward.com/wp-content/uploads/2020/08/norbert-toth-I1oL89qxefc-unsplash-830x625.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -11,7 +8,7 @@
 
 .bookshelf {
   display: grid;
-  grid-template-columns: repeat(4, 320px);
+  grid-template-columns: repeat(4, 356px);
   grid-template-rows: max-content auto;
   column-gap: 48px;
   row-gap: 48px;
@@ -26,18 +23,18 @@
 
 @media only screen and (max-width: 1600px) {
   .bookshelf {
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(3, 356px);
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .bookshelf {
-    grid-template-columns: repeat(2, 320px);
+    grid-template-columns: repeat(2, 356px);
   }
 }
 
 @media only screen and (max-width: 800px) {
   .bookshelf {
-    grid-template-columns: 320px;
+    grid-template-columns: 356px;
   }
 }

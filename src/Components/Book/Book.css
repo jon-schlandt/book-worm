@@ -1,0 +1,14 @@
+.bookCard {
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 10px;
+  background: rgba(245, 241, 225, 0.73);
+  /* padding: 10px 30px;
+  margin: 30px 30px 30px 30px; */
+}
+
+.title,
+.author,
+.rank {
+  color: #790237;
+}
