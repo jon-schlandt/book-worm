@@ -13,7 +13,10 @@ function Book({title, author, rank, bookImage}: BookProps) {
             <img className='img' src={bookImage} alt='Book Cover'/>
             <h2 className='title'>{title}</h2>
             <h3 className='author'>{author}</h3>
-            <p className='rank'>Rank: {rank}</p>
+            <span>
+              <p className='rank'>Rank: {rank}</p>
+              <button>Add to Favorites 🐛</button>
+            </span>
         </article>
 )
 }
