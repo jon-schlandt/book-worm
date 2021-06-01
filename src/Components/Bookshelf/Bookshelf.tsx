@@ -44,19 +44,18 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     let bookCards;
     const whichData = (this.props.queryID === 'favorites') ? this.state.favorites : this.state.books
     if (whichData) {
-
-    bookCards = whichData.map((book, index) => {
-      return (
-        <Book
-        key= {index}
-        title= {book.title}
-        author= {book.author}
-        rank= {book.rank}
-        bookImage= {book.bookImage}
-        />
-      )
-    })
-  }
+      bookCards = whichData.map((book, index) => {
+        return (
+          <Book
+          key= {index}
+          title= {book.title}
+          author= {book.author}
+          rank= {book.rank}
+          bookImage= {book.bookImage}
+          />
+        )
+      })
+    }
 
     return (
       !this.state.books ? <h3>Loading</h3>
