@@ -18,11 +18,10 @@ interface Book {
 }
 
 
-type BookshelfState = {
+interface BookshelfState {
     books: Book[] | null,
     favorites: Book[] | null
 }
-
 
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
@@ -35,14 +34,24 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
   }
 
+
   componentDidMount() {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
   }
 
-  //handleclick
 
-  addToFavorites = book => {
+  handleClick = (title: string) => {
+    if (this.state.books) {
+      const favoriteBook = this.state.books.find(book => book.title === title)
+      if (favoriteBook) {
+        this.addToFavorites(favoriteBook)
+      }
+    }
+  }
+
+
+  addToFavorites = (book: Book) => {
     if (!this.state.favorites) {
       this.setState({ favorites: [book]})
     } else {
@@ -62,7 +71,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
           author= {book.author}
           rank= {book.rank}
           bookImage= {book.bookImage}
-          addToFavorites= {this.addToFavorites}
+          handleClick= {this.handleClick}
           />
         )
       })
