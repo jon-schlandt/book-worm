@@ -40,7 +40,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     if(this.state.books) {
     bookCards = this.state.books.map((book, index) => {
       return (
-        <Book 
+        <Book
         key= {index}
         title= {book.title}
         author= {book.author}
