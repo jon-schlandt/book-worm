@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom'
 
 
 type Props = {}
+
 type State = {
   list: {
     displayName: string,
@@ -60,9 +61,12 @@ class App extends React.Component<Props, State> {
             render={ ({ match }) => {
               const { queryName } = match.params
               return (
-                <Bookshelf queryID={queryName}/>
+                <Bookshelf
+                  queryID={queryName}
+                />
               )
-            }}
+              }
+            }
           />
 
 

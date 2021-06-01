@@ -7,16 +7,20 @@ type BookshelfProps = {
   queryID: string
 }
 
+interface Book {
+  rank: number,
+  publisher: string,
+  description: string,
+  title: string,
+  author: string,
+  bookImage: string,
+  amazonProductUrl: string
+}
+
+
 type BookshelfState = {
-    books: {
-    rank: number,
-    publisher: string,
-    description: string,
-    title: string,
-    author: string,
-    bookImage: string,
-    amazonProductUrl: string
-  }[] | null
+    books: Book[] | null,
+    favorites: Book[] | null
 }
 
 
@@ -27,6 +31,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     super(props)
     this.state= {
       books: null,
+      favorites: null
     }
   }
 
@@ -54,6 +59,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       !this.state.books ? <h3>Loading</h3>
       : <div className='bookshelf-background'>
           <section className='bookshelf'>
+            <h2>{this.props.queryID}</h2>
             {bookCards}
           </section>
         </div>
