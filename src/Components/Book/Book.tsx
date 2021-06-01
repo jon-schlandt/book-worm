@@ -20,7 +20,7 @@ function Book({ title, author, rank, bookImage, handleClick }: BookProps) {
               <button onClick={ () => handleClick(title)}>Add to Favorites 🐛</button>
             </span>
         </article>
-)
+      )
 }
 
 export default Book
