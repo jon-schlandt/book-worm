@@ -52,18 +52,9 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
   }
 
-
-  // addToFavorites = (book: Book) => {
-  //   if (!this.state.favorites) {
-  //     this.setState({ favorites: [book]})
-  //   } else {
-  //     this.setState({ favorites: [...this.state.favorites, book]})
-  //   }
-  // }
-
   render() {
     let bookCards;
-    const whichData = (this.props.queryID === 'favorites') ? this.state.favorites : this.state.books
+    const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
     if (whichData) {
       bookCards = whichData.map((book, index) => {
         return (
