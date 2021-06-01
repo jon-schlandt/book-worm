@@ -23,7 +23,6 @@ export function cleanListData(listData: ListData) {
       queryName: datum.list_name_encoded
     }
   })
-
   return cleanedListData
 }
 
