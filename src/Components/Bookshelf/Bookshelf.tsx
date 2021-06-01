@@ -40,11 +40,13 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       .then(result => this.setState({books: result}))
   }
 
+  //handleclick
+
   addToFavorites = book => {
-    if (!this.state.books) {
-      this.setState({ books: [book]})
+    if (!this.state.favorites) {
+      this.setState({ favorites: [book]})
     } else {
-      this.setState({ books: [...this.state.books, book]})
+      this.setState({ favorites: [...this.state.favorites, book]})
     }
   }
 
@@ -60,6 +62,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
           author= {book.author}
           rank= {book.rank}
           bookImage= {book.bookImage}
+          addToFavorites= {this.addToFavorites}
           />
         )
       })
