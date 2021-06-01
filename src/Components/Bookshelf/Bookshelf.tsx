@@ -39,7 +39,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     if(this.state.books) {
     bookCards = this.state.books.map((book, index) => {
       return (
-        <Book 
+        <Book
         key= {index}
         title= {book.title}
         author= {book.author}
@@ -51,7 +51,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
     return (
       !this.state.books ? <h3>Loading</h3>
-      : <div>{bookCards}</div>
+      : <div className='bookshelf'>{bookCards}</div>
     )
   }
 }
