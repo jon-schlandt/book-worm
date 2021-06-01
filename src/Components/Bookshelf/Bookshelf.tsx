@@ -16,7 +16,8 @@ export interface Book {
   title: string,
   author: string,
   bookImage: string,
-  amazonProductUrl: string
+  amazonProductUrl: string,
+  id: number
 }
 
 
