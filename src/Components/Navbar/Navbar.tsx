@@ -2,7 +2,7 @@ import './Navbar.css'
 import { NavLink } from 'react-router-dom'
 
 function Navbar() {
-  const activeStyling= {
+  const activeStyling = {
     textDecoration: 'underline',
     textDecorationColor: '#F5F1E1',
     color: 'inherit'
