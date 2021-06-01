@@ -4,21 +4,25 @@ import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 
 type BookshelfProps = {
-  queryID: string
+  queryID?: string,
+  favoriteBooks?: Book[] | null,
+  addToFavorites?: (book: Book) => void
 }
 
-type BookshelfState = {
-    books: {
-    rank: number,
-    publisher: string,
-    description: string,
-    title: string,
-    author: string,
-    bookImage: string,
-    amazonProductUrl: string
-  }[] | null
+export interface Book {
+  rank: number,
+  publisher: string,
+  description: string,
+  title: string,
+  author: string,
+  bookImage: string,
+  amazonProductUrl: string
 }
 
+
+interface BookshelfState {
+    books: Book[] | null
+}
 
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
@@ -30,29 +34,46 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
   }
 
+
   componentDidMount() {
+    if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
+    }
+  }
+
+
+  handleClick = (title: string) => {
+    if (this.state.books) {
+      const favoriteBook = this.state.books.find(book => book.title === title)
+      if (favoriteBook && this.props.addToFavorites) {
+        this.props.addToFavorites(favoriteBook)
+      }
+    }
   }
 
   render() {
     let bookCards;
-    if(this.state.books) {
-    bookCards = this.state.books.map((book, index) => {
-      return (
-        <Book
-        key= {index}
-        title= {book.title}
-        author= {book.author}
-        rank= {book.rank}
-        bookImage= {book.bookImage}
-        />
-      )
-    })
+    const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
+    if (whichData) {
+      bookCards = whichData.map((book, index) => {
+        return (
+          <Book
+            key= {index}
+            title= {book.title}
+            author= {book.author}
+            rank= {book.rank}
+            bookImage= {book.bookImage}
+            handleClick= {this.handleClick}
+          />
+        )
+      })
     }
+
     return (
       !this.state.books ? <h3>Loading</h3>
       : <div className='bookshelf-background'>
+          <h2>{this.props.queryID}</h2>
           <section className='bookshelf'>
             {bookCards}
           </section>
@@ -62,4 +83,4 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 }
 
 
-export default Bookshelf
+export { Bookshelf }
