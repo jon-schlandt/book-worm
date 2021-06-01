@@ -9,7 +9,7 @@ type BookshelfProps = {
   addToFavorites?: (book: Book) => void
 }
 
-interface Book {
+export interface Book {
   rank: number,
   publisher: string,
   description: string,
@@ -83,4 +83,4 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 }
 
 
-export { Bookshelf, Book }
+export { Bookshelf }
