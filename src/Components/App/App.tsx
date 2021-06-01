@@ -14,7 +14,8 @@ type State = {
     displayName: string,
     queryName: string
   }[] | [],
-  error: string
+  error: string,
+  favorites: Book[] | null
 }
 
 class App extends React.Component<Props, State> {
@@ -29,7 +30,7 @@ class App extends React.Component<Props, State> {
   componentDidMount() {
     getLists()
       .then(data => {
-        this.setState({ list: data })
+        this.setState({ list: data }, () => console.log(this.state.list))
       })
       .catch(error => this.setState({ error }))
   }

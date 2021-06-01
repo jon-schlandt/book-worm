@@ -19,8 +19,7 @@ interface Book {
 
 
 interface BookshelfState {
-    books: Book[] | null,
-    favorites: Book[] | null
+    books: Book[] | null
 }
 
 
@@ -36,8 +35,10 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 
 
   componentDidMount() {
+    if (this.props.queryID !== 'favorites') {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
+    }
   }
 
 
@@ -66,12 +67,12 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       bookCards = whichData.map((book, index) => {
         return (
           <Book
-          key= {index}
-          title= {book.title}
-          author= {book.author}
-          rank= {book.rank}
-          bookImage= {book.bookImage}
-          handleClick= {this.handleClick}
+            key= {index}
+            title= {book.title}
+            author= {book.author}
+            rank= {book.rank}
+            bookImage= {book.bookImage}
+            handleClick= {this.handleClick}
           />
         )
       })
