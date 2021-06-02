@@ -6,25 +6,22 @@ import { Bookshelf, Book } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 
-
-type Props = {}
-
 type State = {
   list: {
     displayName: string,
     queryName: string
   }[] | [],
   error: string,
-  favorites: Book[] | null
+  favorites: Book[] | []
 }
 
-class App extends React.Component<Props, State> {
-  constructor(props: Props) {
+class App extends React.Component<{}, State> {
+  constructor(props: {}) {
     super(props)
     this.state = {
       list: [],
       error: '',
-      favorites: null
+      favorites: []
     }
   }
 
@@ -77,15 +74,21 @@ class App extends React.Component<Props, State> {
                 )
               } else {
                 return (
+                  this.state.favorites.length ?
                   <Bookshelf
+                    favoritesHeader='Favorites!'
+                    favoriteBooks={this.state.favorites}
+                  />
+                  : !this.state.favorites.length &&
+                  <Bookshelf
+                    favoritesHeader='You have no favorites!'
                     favoriteBooks={this.state.favorites}
                   />
                 )
               }
             }}
           />
-
-
+          
         </Switch>
       </main>
     )
