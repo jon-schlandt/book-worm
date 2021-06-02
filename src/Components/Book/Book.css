@@ -3,10 +3,29 @@
   border-radius: 20px;
   padding: 10px;
   background: rgba(245, 241, 225, 0.73);
+  min-width: 350px;
+  min-height: 700px;
+  position: relative;
 }
 
 .title,
 .author,
 .rank {
   color: #790237;
+}
+
+.bookDetails {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img {
+  max-width: 350px;
 }

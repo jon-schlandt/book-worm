@@ -6,6 +6,7 @@ import { formatBookshelfTitle } from '../../util/utilities'
 
 type BookshelfProps = {
   queryID?: string,
+  favoritesHeader?: string,
   favoriteBooks?: Book[] | null,
   addToFavorites?: (book: Book) => void
 }
@@ -23,7 +24,7 @@ export interface Book {
 
 
 interface BookshelfState {
-    books: Book[] | null
+    books: Book[] | []
 }
 
 
@@ -32,7 +33,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   constructor(props: BookshelfProps) {
     super(props)
     this.state= {
-      books: null,
+      books: [],
     }
   }
 
@@ -80,7 +81,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     } else {
       return (
         <div className='bookshelf-background'>
-          {this.props.queryID && <h2>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>}
+          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' ')) || this.props.favoritesHeader}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>
