@@ -16,7 +16,8 @@ export interface Book {
   title: string,
   author: string,
   bookImage: string,
-  amazonProductUrl: string
+  amazonProductUrl: string,
+  id: string
 }
 
 
@@ -43,9 +44,9 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
 
-  handleClick = (title: string) => {
+  handleClick = (id: string) => {
     if (this.state.books) {
-      const favoriteBook = this.state.books.find(book => book.title === title)
+      const favoriteBook = this.state.books.find(book => book.id === id)
       if (favoriteBook && this.props.addToFavorites) {
         this.props.addToFavorites(favoriteBook)
       }
@@ -56,10 +57,11 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     let bookCards;
     const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
     if (whichData) {
-      bookCards = whichData.map((book, index) => {
+      bookCards = whichData.map(book => {
         return (
           <Book
-            key= {index}
+            key= {book.id}
+            id= {book.id}
             title= {book.title}
             author= {book.author}
             rank= {book.rank}

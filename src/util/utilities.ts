@@ -13,6 +13,7 @@ type BookData = {
   author: string,
   book_image: string,
   amazon_product_url: string,
+  book_uri: string
 }[]
 
 export const cleanListData = (listData: ListData) => {
@@ -22,7 +23,6 @@ export const cleanListData = (listData: ListData) => {
       queryName: datum.list_name_encoded
     }
   })
-
   return cleanedListData
 }
 
@@ -35,7 +35,8 @@ export const cleanBookData = (bookData: BookData) => {
       title: book.title,
       author: book.author,
       bookImage: book.book_image,
-      amazonProductUrl: book.amazon_product_url
+      amazonProductUrl: book.amazon_product_url,
+      id: book.book_uri
     }
   })
   return cleanedBookData
