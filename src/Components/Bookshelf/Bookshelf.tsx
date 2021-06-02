@@ -4,7 +4,7 @@ import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
 
-type BookshelfProps = {
+interface BookshelfProps  {
   queryID?: string,
   favoritesHeader?: string,
   favoriteBooks?: Book[] | null,
@@ -81,8 +81,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     } else {
       return (
         <div className='bookshelf-background'>
-          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>}
-          {!this.props.queryID && <h2 className='bookType'>{this.props.favoritesHeader}</h2>}
+          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' ')) || this.props.favoritesHeader}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>
