@@ -1,6 +1,9 @@
-h1 {
-  color: white;
+.noMatchError {
+  color: #790237;
+  background-color:#F5F1E1;
   justify-content: center;
+  border-radius: 7px;
+  margin: 50px 200px;
 }
 
 button {
@@ -10,6 +13,7 @@ button {
   background-color: #790237;
   color: #F5F1E1;
   font-weight: bold;
+  padding: 10px;
 }
 
 button:hover {
