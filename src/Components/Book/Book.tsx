@@ -15,7 +15,7 @@ const Book = ({ title, author, rank, bookImage, id, handleClick }: BookProps) =>
     <article className='bookCard'>
           <span>
             <p className='rank'>Rank: {rank}</p>
-            <button onClick={ () => handleClick(id)}>Add to Favorites 🐛</button>
+            <button className='favoritesBtn' onClick={ () => handleClick(id)}>Add to Favorites 🐛</button>
           </span>
           <div className='bookDetails'>
             <img className='img' src={bookImage} alt='Book Cover'/>
