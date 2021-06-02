@@ -1,7 +1,7 @@
 import './Book.css'
 import React from 'react'
 
-type BookProps = {
+interface BookProps {
     title: string,
     author: string,
     rank: number,
