@@ -18,7 +18,7 @@ const Book = ({ title, author, rank, bookImage, id, handleClick }: BookProps) =>
         <h3 className='author'>{author}</h3>
         <span>
           <p className='rank'>Rank: {rank}</p>
-          <button onClick={ () => handleClick(id)}>Add to Favorites 🐛</button>
+          <button className='favoritesBtn' onClick={ () => handleClick(id)}>Add to Favorites 🐛</button>
         </span>
     </article>
   )
