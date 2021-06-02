@@ -73,22 +73,17 @@ class App extends React.Component<{}, State> {
                   />
                 )
               } else {
+                const header = this.state.favorites.length ? "Favorites!" : "You have no favorites"
                 return (
-                  this.state.favorites.length ?
                   <Bookshelf
-                    favoritesHeader='Favorites!'
-                    favoriteBooks={this.state.favorites}
-                  />
-                  : !this.state.favorites.length &&
-                  <Bookshelf
-                    favoritesHeader='You have no favorites!'
+                    favoritesHeader={header}
                     favoriteBooks={this.state.favorites}
                   />
                 )
               }
             }}
           />
-          
+
         </Switch>
       </main>
     )
