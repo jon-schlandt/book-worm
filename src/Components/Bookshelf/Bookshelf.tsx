@@ -72,16 +72,22 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       })
     }
 
-    return (
-      !this.state.books ? <h3>Loading</h3>
-      : <div className='bookshelf-background'>
+    if (!this.props.favoriteBooks && !this.state.books) {
+      return (
+        <h3>Loading</h3>
+      )
+    } else {
+      return (
+        <div className='bookshelf-background'>
           <h2>{this.props.queryID}</h2>
           <section className='bookshelf'>
             {bookCards}
           </section>
         </div>
-    )
+      )
+    }
   }
+  
 }
 
 
