@@ -17,7 +17,7 @@ export interface Book {
   author: string,
   bookImage: string,
   amazonProductUrl: string,
-  id: number
+  id: string
 }
 
 
@@ -44,7 +44,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
 
-  handleClick = (id: number) => {
+  handleClick = (id: string) => {
     if (this.state.books) {
       const favoriteBook = this.state.books.find(book => book.id === id)
       if (favoriteBook && this.props.addToFavorites) {
