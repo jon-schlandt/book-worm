@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import { Bookshelf, Book } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
+import NoMatch from '../NoMatch/NoMatch'
 
 type State = {
   list: {
@@ -83,6 +84,8 @@ class App extends React.Component<{}, State> {
               }
             }}
           />
+
+          <Route component={NoMatch} />
 
         </Switch>
       </main>

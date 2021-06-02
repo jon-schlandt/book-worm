@@ -1,0 +1,25 @@
+h1 {
+  color: white;
+  justify-content: center;
+}
+
+button {
+  border-radius: 7px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #790237;
+  color: #F5F1E1;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #F5F1E1;
+  color: #790237;
+  cursor: pointer;
+}
+
+.noMatchContainer > a:link {
+  text-decoration: none;
+  margin: auto;
+  height: 50px;
+}
