@@ -35,7 +35,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
 
-  componentDidMount() {
+  componentDidMount = () => {
     if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
