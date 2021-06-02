@@ -31,5 +31,21 @@ describe('BookshelfDisplay', () => {
 describe('Favorite button', () => {
   beforeEach(() => {
     cy.load()
+    cy.bookshelf()
+  })
+
+  it('should add its linked book to the Favorites bookshelf', () => {
+    cy.get('.favoritesBtn').eq(0).should('be.visible')
+      .click()
+    
+    cy.get('nav > ul > a').eq(1)
+      .click()
+
+    cy.url().should('eq', 'http://localhost:3000/bookshelf/favorites')
+      .get('.bookshelf').should('be.visible')
+      .get('.bookCard').should('have.length', 1)
+      .get('.bookshelf > article').eq(0).should('contain', 'THE LAST THING HE TOLD ME')
+        .should('contain', 'Laura Dave')
+        .should('contain', 'Rank: 1')
   })
 })

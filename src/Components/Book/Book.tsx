@@ -17,7 +17,7 @@ function Book({ title, author, rank, bookImage, handleClick }: BookProps) {
             <h3 className='author'>{author}</h3>
             <span>
               <p className='rank'>Rank: {rank}</p>
-              <button onClick={ () => handleClick(title)}>Add to Favorites 🐛</button>
+              <button className='favoritesBtn'onClick={ () => handleClick(title)}>Add to Favorites 🐛</button>
             </span>
         </article>
       )
