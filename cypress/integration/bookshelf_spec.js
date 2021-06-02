@@ -7,8 +7,8 @@ describe('BookshelfDisplay', () => {
   it('Should display the navbar', () => {
     cy.get('.nav').should('be.visible')
       .get('nav > h1').should('contain', 'BookWorm')
-      .get('nav > ul > li').eq(0).should('contain', 'Home')
-      .get('nav > ul > li').should('contain', 'Favorites')
+      .get('nav > ul > a').eq(0).should('contain', 'Home')
+      .get('nav > ul > a').should('contain', 'Favorites')
   })
 
   it('Should display bookcards based on a genre', () => {
@@ -25,5 +25,4 @@ describe('BookshelfDisplay', () => {
   it('Should include the queryName in the URL', () => {
      cy.url().should('eq', 'http://localhost:3000/bookshelf/combined-print-and-e-book-fiction')
   })
-
 })
