@@ -13,7 +13,7 @@ type BookData = {
   author: string,
   book_image: string,
   amazon_product_url: string,
-  isbns: {isbn10: string, isbn13: string}[]
+  book_uri: string
 }[]
 
 export function cleanListData(listData: ListData) {
@@ -36,7 +36,7 @@ export function cleanBookData( bookData: BookData ) {
       author: book.author,
       bookImage: book.book_image,
       amazonProductUrl: book.amazon_product_url,
-      id: parseInt(book.isbns[0].isbn10)
+      id: book.book_uri
     }
   })
   return cleanedBookData

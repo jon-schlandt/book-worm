@@ -40,7 +40,7 @@ class App extends React.Component<Props, State> {
       if (!this.state.favorites) {
         this.setState({ favorites: [book]})
       } else {
-        if (!this.state.favorites.find(favoriteBook => favoriteBook.title === book.title)) {
+        if (!this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)) {
           this.setState({ favorites: [...this.state.favorites, book]})
       }
     }
