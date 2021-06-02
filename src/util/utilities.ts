@@ -16,7 +16,7 @@ type BookData = {
   book_uri: string
 }[]
 
-export function cleanListData(listData: ListData) {
+export const cleanListData = (listData: ListData) => {
   const cleanedListData = listData.map(datum => {
     return {
       displayName: datum.display_name,
@@ -26,7 +26,7 @@ export function cleanListData(listData: ListData) {
   return cleanedListData
 }
 
-export function cleanBookData( bookData: BookData ) {
+export const cleanBookData = (bookData: BookData) => {
   const cleanedBookData = bookData.map(book => {
     return {
       rank: book.rank,
