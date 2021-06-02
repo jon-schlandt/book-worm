@@ -52,6 +52,9 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       }
     }
   }
+  formatBookshelfTitle = (str: string) => {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})
+  }
 
   render() {
     let bookCards;
@@ -78,8 +81,10 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       )
     } else {
       return (
+
+
         <div className='bookshelf-background'>
-          <h2>{this.props.queryID}</h2>
+          {this.props.queryID && <h2>{this.formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>
@@ -87,7 +92,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       )
     }
   }
-  
+
 }
 
 
