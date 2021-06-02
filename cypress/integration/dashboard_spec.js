@@ -1,4 +1,4 @@
-describe('Details', () => {
+describe('Home Page', () => {
     beforeEach(() => {
       cy.load()
     });
