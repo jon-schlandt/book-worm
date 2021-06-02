@@ -2,6 +2,7 @@ import React from 'react'
 import { getTypeOf } from '../../util/api-calls'
 import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
+import { formatBookshelfTitle } from '../../util/utilities'
 
 type BookshelfProps = {
   queryID?: string,
@@ -79,7 +80,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     } else {
       return (
         <div className='bookshelf-background'>
-          <h2>{this.props.queryID}</h2>
+          {this.props.queryID && <h2>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>
@@ -87,7 +88,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       )
     }
   }
-  
+
 }
 
 

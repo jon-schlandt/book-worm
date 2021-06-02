@@ -41,3 +41,9 @@ export const cleanBookData = (bookData: BookData) => {
   })
   return cleanedBookData
 }
+
+//miscellaneous function
+
+export const formatBookshelfTitle = (str: string) => {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})
+  }
