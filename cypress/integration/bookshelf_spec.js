@@ -48,4 +48,17 @@ describe('Favorite button', () => {
         .should('contain', 'Laura Dave')
         .should('contain', 'Rank: 1')
   })
+
+  it('should only add a book to Favorites if it has not already been added', () => {
+    cy.get('.favoritesBtn').eq(0).should('be.visible')
+      .click()
+      .click()
+
+    cy.get('nav > ul > a').eq(1)
+      .click()
+
+    cy.url().should('eq', 'http://localhost:3000/bookshelf/favorites')
+      .get('.bookshelf').should('be.visible')
+      .get('.bookCard').should('have.length', 1)
+  })
 })
