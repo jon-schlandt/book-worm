@@ -26,8 +26,12 @@ const List = ( {list}: ListProps ) => {
 
   return (
     <div className="list-background">
-      <h2 className='listTitle'>NYT Best Seller Lists</h2>
+      <div className='listTitle'>
+        <h2>Current Best Sellers</h2>
+        <h4>Courtesy of The New York Times</h4>
+      </div>
       <ul className="list-container">
+        <h2>Categories</h2>
         {listItems}
       </ul>
     </div>
