@@ -6,7 +6,7 @@ import { Bookshelf, Book } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 
-type State = {
+interface State {
   list: {
     displayName: string,
     queryName: string
