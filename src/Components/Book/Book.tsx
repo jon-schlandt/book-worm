@@ -6,12 +6,13 @@ type BookProps = {
     author: string,
     rank: number,
     bookImage: string,
-    handleClick: (title: string) => void
+    id: string,
+    handleClick: (id: string) => void
 }
 
-function Book({ title, author, rank, bookImage, handleClick }: BookProps) {
-    return (
-        <article className='bookCard'>
+const Book = ({ title, author, rank, bookImage, id, handleClick }: BookProps) => {
+  return (
+    <article className='bookCard'>
           <span>
             <p className='rank'>Rank: {rank}</p>
             <button onClick={ () => handleClick(title)}>Add to Favorites 🐛</button>
@@ -22,7 +23,7 @@ function Book({ title, author, rank, bookImage, handleClick }: BookProps) {
             <h3 className='author'>{author}</h3>
           </div>
         </article>
-      )
+  )
 }
 
 export default Book

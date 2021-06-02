@@ -1,7 +1,7 @@
 import './Navbar.css'
 import { NavLink } from 'react-router-dom'
 
-function Navbar() {
+const Navbar = () => {
   const activeStyling = {
     textDecoration: 'underline',
     textDecorationColor: '#F5F1E1',

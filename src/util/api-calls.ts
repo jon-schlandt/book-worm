@@ -30,7 +30,7 @@ export const getTypeOf = ( typeOf: string ) => {
 
 // ***** ----- Error Handling ----- ***** //
 
-function handleError(status: number) {
+const handleError = (status: number) => {
   if (status === 404) {
     throw ('404 | Sorry, page not found.')
   }

@@ -13,20 +13,20 @@ type BookData = {
   author: string,
   book_image: string,
   amazon_product_url: string,
+  book_uri: string
 }[]
 
-export function cleanListData(listData: ListData) {
+export const cleanListData = (listData: ListData) => {
   const cleanedListData = listData.map(datum => {
     return {
       displayName: datum.display_name,
       queryName: datum.list_name_encoded
     }
   })
-
   return cleanedListData
 }
 
-export function cleanBookData( bookData: BookData ) {
+export const cleanBookData = (bookData: BookData) => {
   const cleanedBookData = bookData.map(book => {
     return {
       rank: book.rank,
@@ -35,8 +35,15 @@ export function cleanBookData( bookData: BookData ) {
       title: book.title,
       author: book.author,
       bookImage: book.book_image,
-      amazonProductUrl: book.amazon_product_url
+      amazonProductUrl: book.amazon_product_url,
+      id: book.book_uri
     }
   })
   return cleanedBookData
 }
+
+//miscellaneous function
+
+export const formatBookshelfTitle = (str: string) => {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})
+  }

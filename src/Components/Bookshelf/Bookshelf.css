@@ -30,6 +30,14 @@
   display: none;
 }
 
+h2 {
+  background-color: #F5F1E1;
+  color: #790237;
+  padding: 5px;
+  border-radius: 7px;
+  margin-top: 5px;
+}
+
 @media only screen and (max-width: 1600px) {
   .bookshelf {
     grid-template-columns: repeat(3, 356px);
