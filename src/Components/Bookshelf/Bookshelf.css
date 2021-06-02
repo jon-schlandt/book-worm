@@ -6,6 +6,15 @@
   align-items: center;
 }
 
+.bookType {
+  font-size: 50px;;
+  color: #790237;
+  background-color: rgba(245, 241, 225, 0.73);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
 .bookshelf {
   display: grid;
   grid-template-columns: repeat(4, 356px);
