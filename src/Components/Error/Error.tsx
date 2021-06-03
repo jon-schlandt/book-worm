@@ -6,8 +6,8 @@ import './Error.css'
 
 const Error = ({message}: {message: string}) => {
   return (
-    <div className="noMatchContainer">
-      <h1 className="noMatchError">{message}</h1>
+    <div className="errorContainer">
+      <h1 className="error">{message}</h1>
       <Link to='/'>
           <button>GO TO HOMEPAGE</button>
       </Link>

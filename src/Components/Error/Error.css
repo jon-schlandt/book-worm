@@ -1,4 +1,4 @@
-.noMatchError {
+.error {
   color: #790237;
   background-color:#F5F1E1;
   justify-content: center;
@@ -22,7 +22,7 @@ button:hover {
   cursor: pointer;
 }
 
-.noMatchContainer > a:link {
+.errorContainer > a:link {
   text-decoration: none;
   margin: auto;
   height: 50px;
