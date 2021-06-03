@@ -4,7 +4,7 @@
   padding: 16px;
   background: rgba(245, 241, 225, 0.73);
   display: grid;
-  grid-template-rows: auto 495px auto;
+  grid-template-rows: 2em 495px auto;
   row-gap: 8px;
 }
 
@@ -28,6 +28,7 @@ span {
 
 .bookDetails {
   grid-row: 3;
+  align-self: center;
 }
 
 .title,

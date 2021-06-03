@@ -18,7 +18,6 @@
 .bookshelf {
   display: grid;
   grid-template-columns: repeat(4, 356px);
-  grid-template-rows: max-content auto;
   column-gap: 48px;
   row-gap: 48px;
   justify-content: center;
