@@ -17,10 +17,9 @@ describe('Home Page', () => {
         .get('.listTitle > h2').should('be.visible')
         .get('.listTitle > h2').should('be.visible')
         .get('.list-container').should('be.visible')
-        .get('.listItem').should('be.visible')
-        .get('.listItem').eq(0).should('contain', 'Combined Print & E-Book Fiction')
-        .get('.listItem').eq(1).should('contain', 'Combined Print & E-Book Nonfiction')
-        .get('.loadingMsg').should('not.exist')
+        .get('.listItem').eq(0).should('be.visible').should('contain', 'Combined Print & E-Book Fiction')
+        .get('.listItem').eq(1).should('be.visible').should('contain', 'Combined Print & E-Book Nonfiction')
+        .get('.loading-msg').should('not.exist')
     })
 
     it('Should not display the list of book types when a list item is clicked', () => {
