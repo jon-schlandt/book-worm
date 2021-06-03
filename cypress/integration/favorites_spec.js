@@ -4,6 +4,11 @@ describe('Favorite button', () => {
     cy.bookshelf()
   })
 
+  it('Should tell the user if they have not favorited any books yet', () => {
+      cy.get('nav > ul > a').eq(1).click()
+        .get('.bookType').should('contain', 'You haven\'t favorited any books yet!')
+  })
+
   it('should add its linked book to the Favorites bookshelf', () => {
     cy.get('.favoritesBtn').eq(0).should('be.visible')
       .click()
@@ -60,4 +65,5 @@ describe('Favorites display', () => {
         .should('contain', 'Laura Dave')
         .should('contain', 'Rank: 1')
   })
+
 })
