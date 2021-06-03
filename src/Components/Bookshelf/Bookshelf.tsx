@@ -42,7 +42,6 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
         <NoMatch />
       )
     }
-
     let bookCards;
     const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
     if (whichData) {
@@ -66,9 +65,10 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
         <h3>Loading</h3>
       )
     } else {
+
       return (
         <div className='bookshelf-background'>
-          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' ')) || this.props.favoritesHeader}</h2>}
+          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2> || <h2 className='bookType'>{this.props.favoritesHeader}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>
