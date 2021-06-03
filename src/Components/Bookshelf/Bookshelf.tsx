@@ -4,7 +4,7 @@ import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
 import { BookshelfProps,  BookshelfState } from '../../types'
-
+import NoMatch from '../NoMatch/NoMatch'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   state: BookshelfState;
@@ -12,6 +12,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     super(props)
     this.state= {
       books: [],
+      error: false
     }
   }
 
@@ -20,6 +21,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
+      .catch(err => this.setState({error: true}))
     }
   }
 
@@ -34,6 +36,13 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
   render() {
+
+    if (this.state.error) {
+      return (
+        <NoMatch />
+      )
+    }
+
     let bookCards;
     const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
     if (whichData) {

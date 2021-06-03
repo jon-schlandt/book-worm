@@ -6,6 +6,8 @@ import { Bookshelf } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import { State, SingleBook} from '../../types'
+import NoMatch from '../NoMatch/NoMatch'
+
 
 class App extends React.Component<{}, State> {
   constructor(props: {}) {
@@ -75,6 +77,8 @@ class App extends React.Component<{}, State> {
               }
             }}
           />
+
+          <Route component={NoMatch} />
 
         </Switch>
       </main>
