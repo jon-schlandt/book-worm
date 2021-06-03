@@ -1,4 +1,4 @@
-export interface ListState {
+export interface AppState {
     list: {
     displayName: string,
     queryName: string
