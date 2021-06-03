@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import './NoMatch.css'
 
 
-const NoMatch = () => {
+const NoMatch = ({errorMsg}: {errorMsg: string}) => {
   return (
     <div className="noMatchContainer">
-      <h1 className="noMatchError">Sorry, page not found!</h1>
+      <h1 className="noMatchError">{errorMsg}</h1>
       <Link to='/'>
           <button>GO TO HOMEPAGE</button>
       </Link>

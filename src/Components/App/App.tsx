@@ -41,7 +41,8 @@ class App extends React.Component<{}, AppState> {
     return (
       <main className="App">
         <Navbar />
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {/* {this.state.error && <h2 className='responseError'>{this.state.error}</h2>} */}
+        {this.state.error && <NoMatch errorMsg={this.state.error}/>}
         <Switch>
 
           <Route
