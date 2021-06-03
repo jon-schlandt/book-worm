@@ -24,7 +24,7 @@ class App extends React.Component<{}, AppState> {
       .then(data => {
         this.setState({ list: data })
       })
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error: error.message }))
   }
 
   addToFavorites = (book: SingleBook) => {
@@ -67,7 +67,7 @@ class App extends React.Component<{}, AppState> {
                   />
                 )
               } else {
-                const header = this.state.favorites.length ? "Favorites!" : "You haven't favorited any books yet!"
+                const header = this.state.favorites.length ? "Favorites!" : "You have no favorites"
                 return (
                   <Bookshelf
                     favoritesHeader={header}
