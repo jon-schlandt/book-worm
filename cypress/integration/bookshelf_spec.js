@@ -1,3 +1,29 @@
+describe('BookshelfErrorHandling', () => {
+  beforeEach( () => {
+    cy.load()
+  })
+
+  it('Should display an error if the fetch call returns an error', () => {
+    cy.returnBookshelf404()
+      .get('.listItem').eq(0).click()
+      .get('.errorContainer').should('be.visible').should('contain', 'Sorry, page not found!')
+      .get('.errorContainer > a > button').should('be.visible').should('contain', 'GO TO HOMEPAGE')
+
+    cy.returnBookshelf500()
+      .load()
+      .get('.listItem').eq(0).click()
+      .get('.errorContainer').should('be.visible').should('contain', 'Sorry, this page isn\'t working!')
+      .get('.errorContainer > a > button').should('be.visible').should('contain', 'GO TO HOMEPAGE')
+
+    cy.returnBookshelf416()
+      .load()
+      .get('.listItem').eq(0).click()
+      .get('.errorContainer').should('be.visible').should('contain', 'Sorry, something went wrong!')
+      .get('.errorContainer > a > button').should('be.visible').should('contain', 'GO TO HOMEPAGE')
+  })
+
+})
+
 describe('BookshelfDisplay', () => {
   beforeEach( () => {
     cy.load()
@@ -28,13 +54,9 @@ describe('BookshelfDisplay', () => {
      cy.url().should('eq', 'http://localhost:3000/bookshelf/combined-print-and-e-book-fiction')
   })
 
-  it('Should display an error message if the fetch call returns an error', () => {
-    
-  })
-
   it('Should display an error message if the URL is not found', () => {
     cy.visit('http://localhost:3000/bookshelf/not-a-real-genre-type')
-      .get('.noMatchError').should('contain', 'Sorry, page not found!')
+      .get('.error').should('contain', 'Sorry, page not found!')
       .get('button').should('contain', 'GO TO HOMEPAGE')
   })
 

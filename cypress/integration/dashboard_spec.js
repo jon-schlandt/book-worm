@@ -30,7 +30,6 @@ describe('Home Page', () => {
       .url().should('eq', 'http://localhost:3000/bookshelf/combined-print-and-e-book-fiction')
   })
 
-
   it('Should display an error if the fetch call returns an error', () => {
     cy.return404()
       .reload()

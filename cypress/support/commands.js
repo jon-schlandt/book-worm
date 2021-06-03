@@ -194,3 +194,27 @@ Cypress.Commands.add('return416', () => {
     }
   )
 })
+
+Cypress.Commands.add('returnBookshelf404', () => {
+  cy.intercept('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-fiction.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b',
+    {
+      statusCode: 404
+    }
+  )
+})
+
+Cypress.Commands.add('returnBookshelf500', () => {
+  cy.intercept('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-fiction.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b',
+    {
+      statusCode: 500
+    }
+  )
+})
+
+Cypress.Commands.add('returnBookshelf416', () => {
+  cy.intercept('https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-fiction.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b',
+    {
+      statusCode: 416
+    }
+  )
+})
