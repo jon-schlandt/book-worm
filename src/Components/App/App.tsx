@@ -6,7 +6,7 @@ import { Bookshelf } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import { AppState, SingleBook} from '../../util/types'
-import NoMatch from '../NoMatch/NoMatch'
+import Error from '../Error/Error'
 
 
 class App extends React.Component<{}, AppState> {
@@ -42,7 +42,7 @@ class App extends React.Component<{}, AppState> {
       <main className="App">
         <Navbar />
         {/* {this.state.error && <h2 className='responseError'>{this.state.error}</h2>} */}
-        {this.state.error && <NoMatch errorMsg={this.state.error}/>}
+        {this.state.error && <Error message={this.state.error}/>}
         <Switch>
 
           <Route
@@ -80,7 +80,7 @@ class App extends React.Component<{}, AppState> {
           />
 
           <Route 
-            render={() => <NoMatch errorMsg='Sorry, page not found!' />}
+            render={() => <Error message='Sorry, page not found!' />}
           />
 
         </Switch>
