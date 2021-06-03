@@ -186,3 +186,11 @@ Cypress.Commands.add('return500', () => {
     }
   )
 })
+
+Cypress.Commands.add('return416', () => {
+  cy.intercept('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b',
+    {
+      statusCode: 416
+    }
+  )
+})
