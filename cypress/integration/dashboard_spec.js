@@ -26,8 +26,9 @@ describe('Home Page', () => {
       cy.get('.listItem').eq(0).click()
         .get('.list-container').should('not.exist')
         .get('.nav').should('be.visible')
+        .url().should('eq', 'http://localhost:3000/bookshelf/combined-print-and-e-book-fiction')
     })
 
 
       //it should show an error if the fetch returns nothing
-});
+})
