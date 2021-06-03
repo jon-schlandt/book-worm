@@ -32,12 +32,12 @@ const checkResponse = (response: any) => {
 
 const handleError = (status: number) => {
   if (status === 404) {
-    throw ('404 | Sorry, page not found.')
+    throw Error('Sorry, page not found!')
   }
 
   if (status === 500) {
-    throw ('500 | Sorry, this page isn\'t working.')
+    throw Error('Sorry, this page isn\'t working!')
   }
 
-  throw ('Sorry, something went wrong.')
+  throw Error('Sorry, something went wrong!')
 }
