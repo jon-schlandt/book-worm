@@ -5,11 +5,11 @@ import Navbar from '../Navbar/Navbar'
 import { Bookshelf } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
-import { State, SingleBook} from '../../types'
+import { AppState, SingleBook} from '../../util/types'
 import NoMatch from '../NoMatch/NoMatch'
 
 
-class App extends React.Component<{}, State> {
+class App extends React.Component<{}, AppState> {
   constructor(props: {}) {
     super(props)
     this.state = {
