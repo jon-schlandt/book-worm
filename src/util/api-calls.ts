@@ -3,7 +3,7 @@ import {cleanListData, cleanBookData} from './utilities'
 // ***** ----- Fetching ----- ***** //
 
 export const getLists = () => {
-  return fetch('https://httpstat.us/404')
+  return fetch('https://httpstat.us/500')
     .then(response => {
       return checkResponse(response)
     })
@@ -32,12 +32,12 @@ const checkResponse = (response: any) => {
 
 const handleError = (status: number) => {
   if (status === 404) {
-    throw Error('404 | Sorry, page not found.')
+    throw Error('Sorry, page not found!')
   }
 
   if (status === 500) {
-    throw Error('500 | Sorry, this page isn\'t working.')
+    throw Error('Sorry, this page isn\'t working!')
   }
 
-  throw Error('Sorry, something went wrong.')
+  throw Error('Sorry, something went wrong!')
 }
