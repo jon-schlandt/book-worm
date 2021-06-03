@@ -1,13 +1,13 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './NoMatch.css'
+import './Error.css'
 
 
-const NoMatch = () => {
+const Error = ({message}: {message: string}) => {
   return (
-    <div className="noMatchContainer">
-      <h1 className="noMatchError">Sorry, page not found!</h1>
+    <div className="errorContainer">
+      <h1 className="error">{message}</h1>
       <Link to='/'>
           <button>GO TO HOMEPAGE</button>
       </Link>
@@ -15,4 +15,4 @@ const NoMatch = () => {
   )
 }
 
-export default NoMatch
+export default Error

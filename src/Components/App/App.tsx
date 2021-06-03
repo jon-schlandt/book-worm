@@ -6,7 +6,7 @@ import { Bookshelf } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import { AppState, SingleBook} from '../../util/types'
-import NoMatch from '../NoMatch/NoMatch'
+import Error from '../Error/Error'
 
 
 class App extends React.Component<{}, AppState> {
@@ -24,7 +24,7 @@ class App extends React.Component<{}, AppState> {
       .then(data => {
         this.setState({ list: data })
       })
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({ error: error.message }))
   }
 
   addToFavorites = (book: SingleBook) => {
@@ -41,7 +41,7 @@ class App extends React.Component<{}, AppState> {
     return (
       <main className="App">
         <Navbar />
-        {this.state.error && <h2>{this.state.error}</h2>}
+        {this.state.error && <Error message={this.state.error}/>}
         <Switch>
 
           <Route
@@ -78,7 +78,9 @@ class App extends React.Component<{}, AppState> {
             }}
           />
 
-          <Route component={NoMatch} />
+          <Route 
+            render={() => <Error message='Sorry, page not found!' />}
+          />
 
         </Switch>
       </main>

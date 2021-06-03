@@ -4,7 +4,7 @@ import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
 import { BookshelfProps,  BookshelfState } from '../../util/types'
-import NoMatch from '../NoMatch/NoMatch'
+import Error from '../Error/Error'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   state: BookshelfState;
@@ -39,7 +39,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 
     if (this.state.error) {
       return (
-        <NoMatch />
+        <Error message='Sorry, page not found!'/>
       )
     }
     let bookCards;
