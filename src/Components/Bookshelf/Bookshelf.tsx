@@ -3,32 +3,8 @@ import { getTypeOf } from '../../util/api-calls'
 import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
+import { BookshelfProps,  BookshelfState } from '../../types'
 import NoMatch from '../NoMatch/NoMatch'
-
-type BookshelfProps = {
-  queryID?: string,
-  favoritesHeader?: string,
-  favoriteBooks?: Book[] | null,
-  addToFavorites?: (book: Book) => void
-}
-
-export interface Book {
-  rank: number,
-  publisher: string,
-  description: string,
-  title: string,
-  author: string,
-  bookImage: string,
-  amazonProductUrl: string,
-  id: string
-}
-
-
-interface BookshelfState {
-    books: Book[] | [],
-    error: boolean
-}
-
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   state: BookshelfState;
@@ -92,8 +68,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     } else {
       return (
         <div className='bookshelf-background'>
-          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>}
-          {!this.props.queryID && <h2 className='bookType'>{this.props.favoritesHeader}</h2>}
+          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' ')) || this.props.favoritesHeader}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>

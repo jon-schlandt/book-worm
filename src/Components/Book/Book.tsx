@@ -1,14 +1,6 @@
 import './Book.css'
 import React from 'react'
-
-type BookProps = {
-    title: string,
-    author: string,
-    rank: number,
-    bookImage: string,
-    id: string,
-    handleClick: (id: string) => void
-}
+import { BookProps } from '../../types'
 
 const Book = ({ title, author, rank, bookImage, id, handleClick }: BookProps) => {
   return (

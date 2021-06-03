@@ -2,19 +2,12 @@ import React from 'react'
 import { getLists } from '../../util/api-calls'
 import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
-import { Bookshelf, Book } from '../Bookshelf/Bookshelf'
+import { Bookshelf } from '../Bookshelf/Bookshelf'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
+import { State, SingleBook} from '../../types'
 import NoMatch from '../NoMatch/NoMatch'
 
-type State = {
-  list: {
-    displayName: string,
-    queryName: string
-  }[] | [],
-  error: string,
-  favorites: Book[] | []
-}
 
 class App extends React.Component<{}, State> {
   constructor(props: {}) {
@@ -34,7 +27,7 @@ class App extends React.Component<{}, State> {
       .catch(error => this.setState({ error }))
   }
 
-  addToFavorites = (book: Book) => {
+  addToFavorites = (book: SingleBook) => {
       if (!this.state.favorites) {
         this.setState({ favorites: [book]})
       } else {
