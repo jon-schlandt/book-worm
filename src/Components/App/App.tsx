@@ -79,7 +79,9 @@ class App extends React.Component<{}, AppState> {
             }}
           />
 
-          <Route component={NoMatch} />
+          <Route 
+            render={() => <NoMatch errorMsg='Sorry, page not found!' />}
+          />
 
         </Switch>
       </main>
