@@ -3,29 +3,30 @@ import { getTypeOf } from '../../util/api-calls'
 import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
+import { BookshelfProps,  BookshelfState } from '../../types'
 
-interface BookshelfProps  {
-  queryID?: string,
-  favoritesHeader?: string,
-  favoriteBooks?: Book[] | null,
-  addToFavorites?: (book: Book) => void
-}
+// interface BookshelfProps  {
+//   queryID?: string,
+//   favoritesHeader?: string,
+//   favoriteBooks?: Book[] | null,
+//   addToFavorites?: (book: Book) => void
+// }
 
-export interface Book {
-  rank: number,
-  publisher: string,
-  description: string,
-  title: string,
-  author: string,
-  bookImage: string,
-  amazonProductUrl: string,
-  id: string
-}
+// export interface Book {
+//   rank: number,
+//   publisher: string,
+//   description: string,
+//   title: string,
+//   author: string,
+//   bookImage: string,
+//   amazonProductUrl: string,
+//   id: string
+// }
 
 
-interface BookshelfState {
-    books: Book[] | []
-}
+// export interface BookshelfState {
+//     books: Book[] | []
+// }
 
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
