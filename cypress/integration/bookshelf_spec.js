@@ -34,5 +34,13 @@ describe('BookshelfDisplay', () => {
       .get('button').should('contain', 'GO TO HOMEPAGE')
   })
 
-
+  it('Should redirect a user to the homepage when the button on the error page is clicked', () => {
+    cy.visit('http://localhost:3000/bookshelf/not-a-real-genre-type')
+      .get('button').click()
+      .url().should('eq', 'http://localhost:3000/')
+      .get('.listTitle > h2').should('contain', 'Current Best Sellers')
+      .get('.listTitle > h4').should('contain', 'Courtesy of The New York Times')
+      .get('.list-container').should('be.visible')
+  })
+  
 })
