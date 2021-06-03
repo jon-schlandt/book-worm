@@ -49,7 +49,7 @@ class App extends React.Component<{}, AppState> {
             render={ () => {
               return(
                 !this.state.list.length
-                  ? !this.state.error && <h2 className='loadingMsg'>Loading...</h2>
+                  ? !this.state.error && <h2 className='loading-msg'>Loading...</h2>
                   : <List list={this.state.list} />
               )
             }}

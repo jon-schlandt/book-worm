@@ -4,7 +4,7 @@ describe('Home Page', () => {
     });
     it('Should show NavBar', () => {
       cy.get('.nav').should('be.visible')
-        .get('.nav>h1').contains('BookWorm')
+        .get('.nav > h1').contains('BookWorm')
         .get('.nav-links').should('be.visible')
         .get('.nav-links > a').eq(0).should('contain', 'Home')
         .get('.nav-links > a').eq(1).should('contain', 'Favorites')
@@ -13,10 +13,10 @@ describe('Home Page', () => {
     })
 
     it('Should show list of book types', () => {
-      cy.get('.loadingMsg').contains('Loading...')
+      cy.get('.loading-msg').contains('Loading...')
         .get('.listTitle > h2').should('be.visible')
         .get('.listTitle > h2').should('be.visible')
-        .get('ul').should('be.visible')
+        .get('.list-container').should('be.visible')
         .get('.listItem').should('be.visible')
         .get('.listItem').eq(0).should('contain', 'Combined Print & E-Book Fiction')
         .get('.listItem').eq(1).should('contain', 'Combined Print & E-Book Nonfiction')
