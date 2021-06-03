@@ -5,11 +5,7 @@ import {cleanListData, cleanBookData} from './utilities'
 export const getLists = () => {
   return fetch('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b')
     .then(response => {
-      if (response.ok) {
-        return response.json()
-      }
-
-      handleError(response.status)
+      return checkResponse(response)
     })
     .then(data => cleanListData(data.results))
 }
@@ -19,16 +15,20 @@ export const getLists = () => {
 export const getTypeOf = ( typeOf: string ) => {
   return fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${typeOf}.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b`)
   .then(response => {
-    if (response.ok) {
-      return response.json()
-    }
-
-    handleError(response.status)
+    return checkResponse(response)
   })
   .then(data => cleanBookData(data.results.books))
 }
 
 // ***** ----- Error Handling ----- ***** //
+
+const checkResponse = (response: any) => {
+  if (response.ok) {
+    return response.json()
+  }
+
+  handleError(response.status)
+}
 
 const handleError = (status: number) => {
   if (status === 404) {

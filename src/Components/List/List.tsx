@@ -1,13 +1,8 @@
 import React from 'react'
 import './List.css'
 import { Link } from 'react-router-dom'
+import { ListProps } from '../../types'
 
-type ListProps = {
-  list: {
-    displayName: string,
-    queryName: string
-  }[]
-}
 
 const List = ( {list}: ListProps ) => {
 
@@ -21,8 +16,8 @@ const List = ( {list}: ListProps ) => {
            {item.displayName}
          </li>
       </Link>
-     )
-   })
+    )
+  })
 
   return (
     <div className="list-background">

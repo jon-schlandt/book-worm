@@ -3,30 +3,8 @@ import { getTypeOf } from '../../util/api-calls'
 import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
-
-type BookshelfProps = {
-  queryID?: string,
-  favoritesHeader?: string,
-  favoriteBooks?: Book[] | null,
-  addToFavorites?: (book: Book) => void
-}
-
-export interface Book {
-  rank: number,
-  publisher: string,
-  description: string,
-  title: string,
-  author: string,
-  bookImage: string,
-  amazonProductUrl: string,
-  id: string
-}
-
-
-interface BookshelfState {
-    books: Book[] | []
-}
-
+import { BookshelfProps,  BookshelfState } from '../../types'
+import NoMatch from '../NoMatch/NoMatch'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   state: BookshelfState;
@@ -34,6 +12,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     super(props)
     this.state= {
       books: [],
+      error: false
     }
   }
 
@@ -42,6 +21,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
+      .catch(err => this.setState({error: true}))
     }
   }
 
@@ -56,6 +36,13 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
   render() {
+
+    if (this.state.error) {
+      return (
+        <NoMatch />
+      )
+    }
+
     let bookCards;
     const whichData = this.props.queryID ? this.state.books : this.props.favoriteBooks
     if (whichData) {
@@ -81,8 +68,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     } else {
       return (
         <div className='bookshelf-background'>
-          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>}
-          {!this.props.queryID && <h2 className='bookType'>{this.props.favoritesHeader}</h2>}
+          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' ')) || this.props.favoritesHeader}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>
