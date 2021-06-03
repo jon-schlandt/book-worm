@@ -39,7 +39,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 
     if (this.state.error) {
       return (
-        <NoMatch />
+        <NoMatch errorMsg='Sorry, page not found!'/>
       )
     }
     let bookCards;
