@@ -4,24 +4,28 @@
   padding: 10px;
   background: rgba(245, 241, 225, 0.73);
   min-width: 350px;
-  min-height: 700px;
-  position: relative;
+  /* min-height: 700px; */
+  display: grid;
+  grid-template-rows: auto 495px auto;
+}
+
+span {
+  grid-row: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bookImg {
+  grid-row: 2;
+  max-width: 350px;
+}
+
+.bookDetails {
+  grid-row: 3;
 }
 
 .title,
 .author,
 .rank {
   color: #790237;
-}
-
-.bookDetails {
-}
-
-span {
-  display: flex;
-  justify-content: space-around;
-}
-
-.bookImg {
-  max-width: 350px;
 }
