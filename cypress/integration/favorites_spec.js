@@ -9,12 +9,10 @@ describe('Favorite button', () => {
         .get('.bookType').should('contain', 'You haven\'t favorited any books yet!')
   })
 
-  it('should add its linked book to the Favorites bookshelf', () => {
-    cy.get('.favoritesBtn').eq(0).should('be.visible')
-      .click()
+  it('Should add its linked book to the Favorites bookshelf', () => {
+    cy.get('.favoritesBtn').eq(0).should('be.visible').click()
 
-    cy.get('nav > ul > a').eq(1)
-      .click()
+    cy.get('nav > ul > a').eq(1).click()
 
     cy.url().should('eq', 'http://localhost:3000/bookshelf/favorites')
       .get('.bookshelf').should('be.visible')
@@ -24,7 +22,7 @@ describe('Favorite button', () => {
         .should('contain', 'Rank: 1')
   })
 
-  it('should only add a book to Favorites if it has not already been added', () => {
+  it('Should only add a book to Favorites if it has not already been added', () => {
     cy.get('.favoritesBtn').eq(0)
       .click()
       .click()
@@ -39,6 +37,14 @@ describe('Favorite button', () => {
         .should('contain', 'Laura Dave')
         .should('contain', 'Rank: 1')
   })
+
+
+
+
+//add test for unfavoriting a book
+
+
+
 })
 
 describe('Favorites display', () => {
@@ -47,7 +53,7 @@ describe('Favorites display', () => {
     cy.bookshelf()
   })
 
-  it('should continue to hold current session favorites after returning Home', () => {
+  it('Should continue to hold current session favorites after returning Home', () => {
     cy.get('.favoritesBtn').eq(0)
       .click()
 
