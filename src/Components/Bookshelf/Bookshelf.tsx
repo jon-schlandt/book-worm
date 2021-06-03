@@ -5,29 +5,6 @@ import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
 import { BookshelfProps,  BookshelfState } from '../../types'
 
-// interface BookshelfProps  {
-//   queryID?: string,
-//   favoritesHeader?: string,
-//   favoriteBooks?: Book[] | null,
-//   addToFavorites?: (book: Book) => void
-// }
-
-// export interface Book {
-//   rank: number,
-//   publisher: string,
-//   description: string,
-//   title: string,
-//   author: string,
-//   bookImage: string,
-//   amazonProductUrl: string,
-//   id: string
-// }
-
-
-// export interface BookshelfState {
-//     books: Book[] | []
-// }
-
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   state: BookshelfState;

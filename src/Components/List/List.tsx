@@ -3,12 +3,6 @@ import './List.css'
 import { Link } from 'react-router-dom'
 import { ListProps } from '../../types'
 
-// interface ListProps {
-//   list: {
-//     displayName: string,
-//     queryName: string
-//   }[]
-// }
 
 const List = ( {list}: ListProps ) => {
 

@@ -7,15 +7,6 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import { State, SingleBook} from '../../types'
 
-// interface State {
-//   list: {
-//     displayName: string,
-//     queryName: string
-//   }[] | [],
-//   error: string,
-//   favorites: Book[] | []
-// }
-
 class App extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props)
