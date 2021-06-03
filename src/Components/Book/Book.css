@@ -1,31 +1,38 @@
 .bookCard {
   box-sizing: border-box;
   border-radius: 20px;
-  padding: 10px;
+  padding: 16px;
   background: rgba(245, 241, 225, 0.73);
-  min-width: 350px;
-  min-height: 700px;
-  position: relative;
+  display: grid;
+  grid-template-rows: 2em 495px auto;
+  row-gap: 8px;
+}
+
+span {
+  grid-row: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.favoritesBtn {
+  height: fit-content;
+}
+
+.bookImg {
+  grid-row: 2;
+  max-width: 320px;
+  justify-self: center;
+  align-self: center;
+}
+
+.bookDetails {
+  grid-row: 3;
+  align-self: center;
 }
 
 .title,
 .author,
 .rank {
   color: #790237;
-}
-
-.bookDetails {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-span {
-  display: flex;
-  justify-content: space-around;
-}
-
-.img {
-  max-width: 350px;
 }
