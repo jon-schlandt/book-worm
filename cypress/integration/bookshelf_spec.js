@@ -28,6 +28,10 @@ describe('BookshelfDisplay', () => {
      cy.url().should('eq', 'http://localhost:3000/bookshelf/combined-print-and-e-book-fiction')
   })
 
+  it('Should display an error message if the fetch call returns an error', () => {
+    
+  })
+
   it('Should display an error message if the URL is not found', () => {
     cy.visit('http://localhost:3000/bookshelf/not-a-real-genre-type')
       .get('.noMatchError').should('contain', 'Sorry, page not found!')
@@ -42,5 +46,5 @@ describe('BookshelfDisplay', () => {
       .get('.listTitle > h4').should('contain', 'Courtesy of The New York Times')
       .get('.list-container').should('be.visible')
   })
-  
+
 })

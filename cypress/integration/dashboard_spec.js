@@ -30,5 +30,7 @@ describe('Home Page', () => {
     })
 
 
-      //it should show an error if the fetch returns nothing
+      it('Should display an error if the fetch call returns an error', () => {
+
+      })
 })
