@@ -3,7 +3,7 @@ import { getTypeOf } from '../../util/api-calls'
 import Book from '../Book/Book'
 import '../Bookshelf/Bookshelf.css'
 import { formatBookshelfTitle } from '../../util/utilities'
-import { BookshelfProps,  BookshelfState } from '../../types'
+import { BookshelfProps,  BookshelfState } from '../../util/types'
 import NoMatch from '../NoMatch/NoMatch'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {

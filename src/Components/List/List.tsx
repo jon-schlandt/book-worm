@@ -1,7 +1,7 @@
 import React from 'react'
 import './List.css'
 import { Link } from 'react-router-dom'
-import { ListProps } from '../../types'
+import { ListProps } from '../../util/types'
 
 
 const List = ( {list}: ListProps ) => {
