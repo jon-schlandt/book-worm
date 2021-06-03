@@ -15,10 +15,6 @@
 }
 
 .bookDetails {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 span {
@@ -26,6 +22,6 @@ span {
   justify-content: space-around;
 }
 
-.img {
+.bookImg {
   max-width: 350px;
 }
