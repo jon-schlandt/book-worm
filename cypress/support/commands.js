@@ -171,8 +171,9 @@ Cypress.Commands.add('bookshelf', () => {
       cy.get('.listItem').eq(0).click()
   })
 
-Cypress.Commands.add('404', () => {
-  cy.intercept('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b', {
-      status: 404
-    }
-  }
+Cypress.Commands.add('return404', () => {
+  cy.intercept('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=A7HbLAtK8PlqUjAQ0Ol77w3tNU1cZS4b',
+    {
+      statusCode: 404
+    })
+  })
