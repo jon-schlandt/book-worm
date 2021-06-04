@@ -39,7 +39,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 
     if (this.state.error) {
       return (
-        <Error message='Sorry, page not found!'/>
+        <Error message={this.state.error}/>
       )
     }
     let bookCards;
@@ -60,7 +60,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       })
     }
 
-    if (!this.props.favoriteBooks && !this.state.books) {
+    if (!this.props.favoriteBooks && !this.state.books.length) {
       return (
         <h3>Loading</h3>
       )
