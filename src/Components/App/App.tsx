@@ -45,7 +45,7 @@ class App extends React.Component<{}, AppState> {
     } else {
       if (!this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)) {
         this.setState({ favorites: [...this.state.favorites, book]})
-        console.log("2", this.state.favorites);
+        // console.log("2", this.state.favorites);
         
       }
     }
@@ -77,6 +77,7 @@ class App extends React.Component<{}, AppState> {
                 return (
                   <Bookshelf
                     queryID={queryName}
+                    favoriteBooks={this.state.favorites}
                     addToFavorites={this.addToFavorites}
                   />
                 )
@@ -86,6 +87,7 @@ class App extends React.Component<{}, AppState> {
                   <Bookshelf
                     favoritesHeader={header}
                     favoriteBooks={this.state.favorites}
+                    addToFavorites={this.addToFavorites}
                   />
                 )
               }

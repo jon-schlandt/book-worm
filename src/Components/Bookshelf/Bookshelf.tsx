@@ -35,6 +35,11 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
   }
 
+  checkIfFavorite(id: string) {
+    const foundBook = this.props.favoriteBooks?.find(favorite => favorite.id === id)
+    return foundBook ? true : false
+  }
+  
   render() {
 
     if (this.state.error) {
@@ -54,6 +59,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
             author= {book.author}
             rank= {book.rank}
             bookImage= {book.bookImage}
+            isFavorite={this.state.books.length ? this.checkIfFavorite(book.id) : true}
             handleClick= {this.handleClick}
           />
         )

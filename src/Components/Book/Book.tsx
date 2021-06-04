@@ -23,7 +23,7 @@ class Book extends React.Component<BookProps, BookState> {
   constructor(props: BookProps) {
     super(props)
     this.state= {
-      favorite: false
+      favorite: props.isFavorite
     }
   }
 

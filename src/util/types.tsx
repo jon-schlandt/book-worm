@@ -38,6 +38,7 @@ export interface BookProps {
     rank: number,
     bookImage: string,
     id: string,
+    isFavorite: boolean
     handleClick: (id: string, state: boolean) => void
 }
 
