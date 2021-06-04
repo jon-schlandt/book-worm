@@ -12,7 +12,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     super(props)
     this.state= {
       books: [],
-      error: false
+      error: ''
     }
   }
 
@@ -21,7 +21,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
-      .catch(err => this.setState({error: true}))
+      .catch(error => this.setState({error: error.message}))
     }
   }
 
