@@ -26,11 +26,11 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
 
-  handleClick = (id: string) => {
+  handleClick = (id: string, state: boolean) => {
     if (this.state.books) {
       const favoriteBook = this.state.books.find(book => book.id === id)
       if (favoriteBook && this.props.addToFavorites) {
-        this.props.addToFavorites(favoriteBook)
+        this.props.addToFavorites(favoriteBook, state)
       }
     }
   }
