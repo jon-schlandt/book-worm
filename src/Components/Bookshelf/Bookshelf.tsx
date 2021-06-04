@@ -7,15 +7,13 @@ import { BookshelfProps,  BookshelfState } from '../../util/types'
 import Error from '../Error/Error'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
-  state: BookshelfState;
   constructor(props: BookshelfProps) {
     super(props)
-    this.state= {
+    this.state = {
       books: [],
       error: ''
     }
   }
-
 
   componentDidMount = () => {
     if (this.props.queryID) {
@@ -24,7 +22,6 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
       .catch(error => this.setState({error: error.message}))
     }
   }
-
 
   handleClick = (id: string, state: boolean) => {
     if (this.state.books) {
