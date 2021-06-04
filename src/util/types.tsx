@@ -43,5 +43,5 @@ export interface BookProps {
 
 export interface BookshelfState {
     books: SingleBook[] | [],
-    error: boolean
+    error: string
 }
