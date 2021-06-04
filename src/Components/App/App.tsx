@@ -9,6 +9,8 @@ import { AppState, SingleBook} from '../../util/types'
 import Error from '../Error/Error'
 
 
+
+
 class App extends React.Component<{}, AppState> {
   constructor(props: {}) {
     super(props)
@@ -27,12 +29,24 @@ class App extends React.Component<{}, AppState> {
       .catch(error => this.setState({ error: error.message }))
   }
 
-  addToFavorites = (book: SingleBook) => {
-      if (!this.state.favorites) {
-        this.setState({ favorites: [book]})
-      } else {
-        if (!this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)) {
-          this.setState({ favorites: [...this.state.favorites, book]})
+  addToFavorites = (book: SingleBook, state: boolean) => {
+    if(!state) {
+      
+      let array = this.state.favorites.filter(favoriteBook => favoriteBook.id !== book.id)
+      this.setState( { favorites: array } )
+      // let thing  = this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)
+      console.log("1", this.state.favorites);
+      
+ 
+      // this.state.favorites.indexOf(thing)
+        // this.setState( {favorites: array} )
+        //  console.log(array.indexOf(thing));
+         
+    } else {
+      if (!this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)) {
+        this.setState({ favorites: [...this.state.favorites, book]})
+        console.log("2", this.state.favorites);
+        
       }
     }
   }
