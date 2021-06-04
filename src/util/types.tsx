@@ -47,5 +47,5 @@ export interface BookState {
 
 export interface BookshelfState {
     books: SingleBook[] | [],
-    error: boolean
+    error: string
 }
