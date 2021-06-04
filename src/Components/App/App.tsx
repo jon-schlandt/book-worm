@@ -8,9 +8,6 @@ import { Switch, Route } from 'react-router-dom'
 import { AppState, SingleBook} from '../../util/types'
 import Error from '../Error/Error'
 
-
-
-
 class App extends React.Component<{}, AppState> {
   constructor(props: {}) {
     super(props)
