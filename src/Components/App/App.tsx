@@ -26,8 +26,8 @@ class App extends React.Component<{}, AppState> {
       .catch(error => this.setState({ error: error.message }))
   }
 
-  addToFavorites = (book: SingleBook, state: boolean) => {
-    if(!state) {
+  addToFavorites = (book: SingleBook, isFavorited: boolean) => {
+    if(!isFavorited) {
       let array = this.state.favorites.filter(favoriteBook => favoriteBook.id !== book.id)
       this.setState( { favorites: array } )
     } else {
