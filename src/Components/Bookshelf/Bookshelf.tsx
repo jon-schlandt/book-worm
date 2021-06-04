@@ -7,15 +7,13 @@ import { BookshelfProps,  BookshelfState } from '../../util/types'
 import Error from '../Error/Error'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
-  state: BookshelfState;
   constructor(props: BookshelfProps) {
     super(props)
-    this.state= {
+    this.state = {
       books: [],
       error: ''
     }
   }
-
 
   componentDidMount = () => {
     if (this.props.queryID) {
@@ -25,16 +23,20 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
   }
 
-
-  handleClick = (id: string) => {
+  handleClick = (id: string, isFavorite: boolean) => {
     if (this.state.books) {
       const favoriteBook = this.state.books.find(book => book.id === id)
       if (favoriteBook && this.props.addToFavorites) {
-        this.props.addToFavorites(favoriteBook)
+        this.props.addToFavorites(favoriteBook, isFavorite)
       }
     }
   }
 
+  checkIfFavorite(id: string) {
+    const foundBook = this.props.favoriteBooks?.find(favorite => favorite.id === id)
+    return foundBook ? true : false
+  }
+  
   render() {
 
     if (this.state.error) {
@@ -54,6 +56,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
             author= {book.author}
             rank= {book.rank}
             bookImage= {book.bookImage}
+            isFavorite={this.state.books.length ? this.checkIfFavorite(book.id) : true}
             handleClick= {this.handleClick}
           />
         )
