@@ -8,14 +8,14 @@ const List = ( {list}: ListProps ) => {
 
   const listItems = list.map((item, index) => {
      return (
+       <li
+        className='listItem'
+        id={item.queryName}>
       <Link to={`/bookshelf/${item.queryName}`} key={index}>
-         <li
-           className='listItem'
-           id={item.queryName}
-         >
            {item.displayName}
-         </li>
+           
       </Link>
+      </li>
     )
   })
 
@@ -23,10 +23,10 @@ const List = ( {list}: ListProps ) => {
     <div className="list-background">
       <div className='listTitle'>
         <h2>Current Best Sellers</h2>
-        <h4>Courtesy of The New York Times</h4>
+        <h3>Courtesy of The New York Times</h3>
       </div>
+      <h4>Categories</h4>
       <ul className="list-container">
-        <h2>Categories</h2>
         {listItems}
       </ul>
     </div>
