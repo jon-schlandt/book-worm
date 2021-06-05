@@ -8,7 +8,7 @@
   background-image: url('https://assets.readitforward.com/wp-content/uploads/2020/08/norbert-toth-I1oL89qxefc-unsplash-830x625.jpg');
 }
 
-h2 {
+.loading-msg {
   color: #790237;
   background-color:#F5F1E1;
   padding: 10px;
