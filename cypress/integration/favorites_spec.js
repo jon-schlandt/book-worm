@@ -5,14 +5,14 @@ describe('Favorite button', () => {
   })
 
   it('Should tell the user if they have not favorited any books yet', () => {
-      cy.get('nav > ul > a').eq(1).click()
+      cy.get('.nav-links > li > a').eq(1).click()
         .get('.bookType').should('contain', 'You haven\'t favorited any books yet!')
   })
 
   it('Should add its linked book to the Favorites bookshelf', () => {
     cy.get('.favoritesBtn').eq(0).should('be.visible').click()
 
-    cy.get('nav > ul > a').eq(1).click()
+    cy.get('.nav-links > li > a').eq(1).click()
 
     cy.url().should('eq', 'http://localhost:3000/bookshelf/favorites')
       .get('.bookshelf').should('be.visible')
@@ -27,7 +27,7 @@ describe('Favorite button', () => {
       .click()
       .click()
 
-    cy.get('nav > ul > a').eq(1)
+    cy.get('.nav-links > li > a').eq(1)
       .click()
 
     cy.url().should('eq', 'http://localhost:3000/bookshelf/favorites')
