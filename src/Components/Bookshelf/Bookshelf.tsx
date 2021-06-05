@@ -23,15 +23,22 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
     }
   }
 
+  findBookDetails = (id: string) => {
+   //find book
+    let bookDetails = this.state.books.find(book => book.id === id)
+  //send book to App
+    if(bookDetails) {
+      this.props.setBookDetails(bookDetails)
+    }
+  }
+
   handleClick = (id: string, isFavorite: boolean) => {
     let favoriteBook
-
     if (this.state.books.length) {
       favoriteBook = this.state.books.find(book => book.id === id)
     } else {
       favoriteBook = this.props.favoriteBooks?.find(book => book.id === id)
     }
-
     if (favoriteBook && this.props.addToFavorites) {
       this.props.addToFavorites(favoriteBook, isFavorite)
     }
@@ -63,6 +70,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
             bookImage= {book.bookImage}
             isFavorite={this.state.books.length ? this.checkIfFavorite(book.id) : true}
             handleClick= {this.handleClick}
+            findBookDetails= {this.findBookDetails}
           />
         )
       })

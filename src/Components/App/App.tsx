@@ -14,8 +14,14 @@ class App extends React.Component<{}, AppState> {
     this.state = {
       list: [],
       error: '',
-      favorites: []
+      favorites: [],
+
     }
+  }
+
+  setBookDetails = ( details: SingleBook ) => {
+    console.log(details);
+    
   }
 
   componentDidMount = () => {
@@ -62,6 +68,7 @@ class App extends React.Component<{}, AppState> {
               if (queryName !== 'favorites') {
                 return (
                   <Bookshelf
+                    setBookDetails={this.setBookDetails}
                     queryID={queryName}
                     favoriteBooks={this.state.favorites}
                     addToFavorites={this.addToFavorites}
@@ -71,6 +78,7 @@ class App extends React.Component<{}, AppState> {
                 const header = this.state.favorites.length ? "Favorites!" : "You haven't favorited any books yet!"
                 return (
                   <Bookshelf
+                    setBookDetails={this.setBookDetails}
                     favoritesHeader={header}
                     favoriteBooks={this.state.favorites}
                     addToFavorites={this.addToFavorites}
@@ -79,6 +87,11 @@ class App extends React.Component<{}, AppState> {
               }
             }}
           />
+
+          <Route exact path='/bookshelf/details/:id'
+
+          />
+           
 
           <Route
             render={() => <Error message='Sorry, page not found!' />}
