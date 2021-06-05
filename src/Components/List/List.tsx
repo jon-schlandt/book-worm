@@ -13,7 +13,7 @@ const List = ( {list}: ListProps ) => {
         id={item.queryName}>
       <Link to={`/bookshelf/${item.queryName}`} key={index}>
            {item.displayName}
-           
+
       </Link>
       </li>
     )
@@ -25,10 +25,12 @@ const List = ( {list}: ListProps ) => {
         <h2>Current Best Sellers</h2>
         <h3>Courtesy of The New York Times</h3>
       </div>
-      <h4>Categories</h4>
-      <ul className="list-container">
-        {listItems}
-      </ul>
+      <div className="list-container">
+        <h4>Categories</h4>
+        <ul>
+          {listItems}
+        </ul>
+      </div>
     </div>
   )
 }
