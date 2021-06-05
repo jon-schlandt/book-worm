@@ -22,7 +22,7 @@ export const getTypeOf = ( typeOf: string ) => {
 
 // ***** ----- Error Handling ----- ***** //
 
-const checkResponse = (response: any) => {
+const checkResponse = (response: Response) => {
   if (response.ok) {
     return response.json()
   }
