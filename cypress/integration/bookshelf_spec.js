@@ -33,8 +33,8 @@ describe('BookshelfDisplay', () => {
   it('Should display the navbar', () => {
     cy.get('.nav').should('be.visible')
       .get('nav > h1').should('contain', 'BookWorm')
-      .get('nav > ul > a').eq(0).should('contain', 'Home')
-      .get('nav > ul > a').should('contain', 'Favorites')
+      .get('nav > ul > li > a').eq(0).should('contain', 'Home')
+      .get('nav > ul > li>a').should('contain', 'Favorites')
   })
 
   it('Should display bookcards based on a genre', () => {
@@ -65,7 +65,7 @@ describe('BookshelfDisplay', () => {
       .get('button').click()
       .url().should('eq', 'http://localhost:3000/')
       .get('.listTitle > h2').should('contain', 'Current Best Sellers')
-      .get('.listTitle > h4').should('contain', 'Courtesy of The New York Times')
+      .get('.listTitle > h3').should('contain', 'Courtesy of The New York Times')
       .get('.list-container').should('be.visible')
   })
 
