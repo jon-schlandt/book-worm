@@ -5,7 +5,7 @@ export interface AppState {
     }[],
     error: string,
     favorites: SingleBook[],
-    currentBook: SingleBook
+    currentBook: SingleBook | {}
 }
 
 export interface ListProps {
@@ -52,4 +52,8 @@ export interface SingleBook {
   bookImage: string,
   amazonProductUrl: string,
   id: string
+}
+
+export interface DetailsProps {
+    info: SingleBook | {}
 }
