@@ -12,19 +12,20 @@ const Navbar = () => {
     <nav className='nav'>
       <h1>BookWorm</h1>
       <ul className='nav-links'>
-        <NavLink
-          exact to='/'
-          activeStyle={activeStyling}
-          >
-          <li>Home</li>
-        </NavLink>
-
-        <NavLink
-          exact to='/bookshelf/favorites'
-          activeStyle={activeStyling}
-          >
-          <li>Favorites</li>
-        </NavLink>
+        <li>
+          <NavLink
+            exact to='/'
+            activeStyle={activeStyling}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            exact to='/bookshelf/favorites'
+            activeStyle={activeStyling}>
+            Favorites
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )
