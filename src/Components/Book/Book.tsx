@@ -37,7 +37,7 @@ class Book extends React.Component<BookProps, BookState> {
           <h2 className='title'>{this.props.title}</h2>
           <h3 className='author'>{this.props.author}</h3>
         </div>
-        <Link  to={`/bookshelf/details${this.props.id}`}>
+        <Link  to={`/bookshelf/details/${this.props.id}`}>
         <button className='detailsBtn' onClick={ () => this.props.findBookDetails(this.props.id) } >Details</button>
         </Link>
       </article>
