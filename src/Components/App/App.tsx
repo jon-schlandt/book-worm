@@ -3,9 +3,10 @@ import { getLists } from '../../util/api-calls'
 import List from '../List/List'
 import Navbar from '../Navbar/Navbar'
 import { Bookshelf } from '../Bookshelf/Bookshelf'
+import Details from '../Details/Details'
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
-import { AppState, SingleBook} from '../../util/types'
+import { AppState, SingleBook } from '../../util/types'
 import Error from '../Error/Error'
 
 class App extends React.Component<{}, AppState> {
@@ -15,13 +16,13 @@ class App extends React.Component<{}, AppState> {
       list: [],
       error: '',
       favorites: [],
-
+      currentBook: {}
     }
   }
 
   setBookDetails = ( details: SingleBook ) => {
-    console.log(details);
-    
+    this.setState({ currentBook: details })
+    //send currentBook to Details
   }
 
   componentDidMount = () => {
@@ -89,7 +90,14 @@ class App extends React.Component<{}, AppState> {
           />
 
           <Route exact path='/bookshelf/details/:id'
-
+            render={ () => {
+              return (
+                <Details 
+                info={this.state.currentBook}
+                />
+              )
+            }
+            }
           />
            
 
