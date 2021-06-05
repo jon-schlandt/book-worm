@@ -4,7 +4,8 @@ export interface AppState {
     queryName: string
     }[],
     error: string,
-    favorites: SingleBook[]
+    favorites: SingleBook[],
+    currentBook: SingleBook
 }
 
 export interface ListProps {
