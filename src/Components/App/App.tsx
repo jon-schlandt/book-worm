@@ -22,7 +22,6 @@ class App extends React.Component<{}, AppState> {
 
   setBookDetails = ( details: SingleBook ) => {
     this.setState({ currentBook: details })
-    //send currentBook to Details
   }
 
   componentDidMount = () => {
