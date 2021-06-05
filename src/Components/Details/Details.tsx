@@ -1,6 +1,7 @@
 import './Details.css'
+import { DetailsProps } from '../../util/types'
 
-const Details = () => {
+const Details = (props: DetailsProps) => {
 
     return (
         <h1>Something</h1>
