@@ -2,9 +2,9 @@ export interface AppState {
     list: {
     displayName: string,
     queryName: string
-    }[] | [],
+    }[],
     error: string,
-    favorites: SingleBook[] | []
+    favorites: SingleBook[]
 }
 
 export interface ListProps {
@@ -17,7 +17,7 @@ export interface ListProps {
 export interface BookshelfProps  {
     queryID?: string,
     favoritesHeader?: string,
-    favoriteBooks?: SingleBook[] | null,
+    favoriteBooks?: SingleBook[],
     addToFavorites?: (book: SingleBook, state: boolean) => void
 }
 
@@ -47,6 +47,6 @@ export interface BookState {
 }
 
 export interface BookshelfState {
-    books: SingleBook[] | [],
+    books: SingleBook[],
     error: string
 }
