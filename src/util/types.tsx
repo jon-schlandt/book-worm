@@ -34,6 +34,7 @@ export interface BookProps {
     id: string,
     isFavorite: boolean
     handleClick: (id: string, state: boolean) => void
+    findBookDetails: () => void
 }
 
 export interface BookState {
