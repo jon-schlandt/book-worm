@@ -5,7 +5,7 @@ export interface AppState {
     }[],
     error: string,
     favorites: SingleBook[],
-    currentBook: SingleBook | {}
+    currentBook: SingleBook 
 }
 
 export interface ListProps {
@@ -55,5 +55,5 @@ export interface SingleBook {
 }
 
 export interface DetailsProps {
-    info: SingleBook | {}
+    info: SingleBook 
 }
