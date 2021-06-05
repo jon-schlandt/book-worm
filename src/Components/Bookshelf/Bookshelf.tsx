@@ -7,39 +7,41 @@ import { BookshelfProps,  BookshelfState } from '../../util/types'
 import Error from '../Error/Error'
 
 class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
-  state: BookshelfState;
   constructor(props: BookshelfProps) {
     super(props)
-    this.state= {
+    this.state = {
       books: [],
-      error: false
+      error: ''
     }
   }
-
 
   componentDidMount = () => {
     if (this.props.queryID) {
     getTypeOf( this.props.queryID )
       .then(result => this.setState({books: result}))
-      .catch(err => this.setState({error: true}))
+      .catch(error => this.setState({error: error.message}))
     }
   }
 
-
-  handleClick = (id: string) => {
+  handleClick = (id: string, isFavorite: boolean) => {
     if (this.state.books) {
       const favoriteBook = this.state.books.find(book => book.id === id)
       if (favoriteBook && this.props.addToFavorites) {
-        this.props.addToFavorites(favoriteBook)
+        this.props.addToFavorites(favoriteBook, isFavorite)
       }
     }
   }
 
+  checkIfFavorite(id: string) {
+    const foundBook = this.props.favoriteBooks?.find(favorite => favorite.id === id)
+    return foundBook ? true : false
+  }
+  
   render() {
 
     if (this.state.error) {
       return (
-        <Error message='Sorry, page not found!'/>
+        <Error message={this.state.error}/>
       )
     }
     let bookCards;
@@ -54,13 +56,14 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
             author= {book.author}
             rank= {book.rank}
             bookImage= {book.bookImage}
+            isFavorite={this.state.books.length ? this.checkIfFavorite(book.id) : true}
             handleClick= {this.handleClick}
           />
         )
       })
     }
 
-    if (!this.props.favoriteBooks && !this.state.books) {
+    if (!this.props.favoriteBooks && !this.state.books.length) {
       return (
         <h3>Loading</h3>
       )
@@ -68,7 +71,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
 
       return (
         <div className='bookshelf-background'>
-          {this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2> || <h2 className='bookType'>{this.props.favoritesHeader}</h2>}
+          {(this.props.queryID && <h2 className='bookType'>{formatBookshelfTitle(this.props.queryID.split('-').join(' '))}</h2>) || <h2 className='bookType'>{this.props.favoritesHeader}</h2>}
           <section className='bookshelf'>
             {bookCards}
           </section>

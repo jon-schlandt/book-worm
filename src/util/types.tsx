@@ -18,7 +18,7 @@ export interface BookshelfProps  {
     queryID?: string,
     favoritesHeader?: string,
     favoriteBooks?: SingleBook[] | null,
-    addToFavorites?: (book: SingleBook) => void
+    addToFavorites?: (book: SingleBook, state: boolean) => void
 }
 
 export interface SingleBook {
@@ -38,10 +38,15 @@ export interface BookProps {
     rank: number,
     bookImage: string,
     id: string,
-    handleClick: (id: string) => void
+    isFavorite: boolean
+    handleClick: (id: string, state: boolean) => void
+}
+
+export interface BookState {
+    favorite: boolean
 }
 
 export interface BookshelfState {
     books: SingleBook[] | [],
-    error: boolean
+    error: string
 }

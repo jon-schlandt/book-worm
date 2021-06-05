@@ -8,7 +8,6 @@ import { Switch, Route } from 'react-router-dom'
 import { AppState, SingleBook} from '../../util/types'
 import Error from '../Error/Error'
 
-
 class App extends React.Component<{}, AppState> {
   constructor(props: {}) {
     super(props)
@@ -27,12 +26,13 @@ class App extends React.Component<{}, AppState> {
       .catch(error => this.setState({ error: error.message }))
   }
 
-  addToFavorites = (book: SingleBook) => {
-      if (!this.state.favorites) {
-        this.setState({ favorites: [book]})
-      } else {
-        if (!this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)) {
-          this.setState({ favorites: [...this.state.favorites, book]})
+  addToFavorites = (book: SingleBook, isFavorited: boolean) => {
+    if(!isFavorited) {
+      let array = this.state.favorites.filter(favoriteBook => favoriteBook.id !== book.id)
+      this.setState( { favorites: array } )
+    } else {
+      if (!this.state.favorites.find(favoriteBook => favoriteBook.id === book.id)) {
+        this.setState({ favorites: [...this.state.favorites, book]})
       }
     }
   }
@@ -63,6 +63,7 @@ class App extends React.Component<{}, AppState> {
                 return (
                   <Bookshelf
                     queryID={queryName}
+                    favoriteBooks={this.state.favorites}
                     addToFavorites={this.addToFavorites}
                   />
                 )
@@ -72,6 +73,7 @@ class App extends React.Component<{}, AppState> {
                   <Bookshelf
                     favoritesHeader={header}
                     favoriteBooks={this.state.favorites}
+                    addToFavorites={this.addToFavorites}
                   />
                 )
               }
