@@ -1,3 +1,10 @@
+import './Details.css'
 
+const Details = () => {
 
-export {}
+    return (
+        <h1>Something</h1>
+    )
+}
+
+export default Details
