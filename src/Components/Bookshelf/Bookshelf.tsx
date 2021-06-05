@@ -24,9 +24,7 @@ class Bookshelf extends React.Component<BookshelfProps, BookshelfState> {
   }
 
   findBookDetails = (id: string) => {
-   //find book
     let bookDetails = this.state.books.find(book => book.id === id)
-  //send book to App
     if(bookDetails) {
       this.props.setBookDetails(bookDetails)
     }
