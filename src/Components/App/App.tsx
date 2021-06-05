@@ -48,8 +48,8 @@ class App extends React.Component<{}, AppState> {
             exact path='/'
             render={ () => {
               return(
-                !this.state.list.length
-                  ? !this.state.error && <h2>Loading...</h2>
+                !this.state.list.length  
+                  ? !this.state.error && <h2 className='loading-msg'>Loading...</h2>
                   : <List list={this.state.list} />
               )
             }}
@@ -80,7 +80,7 @@ class App extends React.Component<{}, AppState> {
             }}
           />
 
-          <Route 
+          <Route
             render={() => <Error message='Sorry, page not found!' />}
           />
 
