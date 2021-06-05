@@ -1,6 +1,7 @@
 import './Book.css'
 import React from 'react'
 import { BookProps, BookState } from '../../util/types'
+import { Link } from 'react-router-dom'
 
 class Book extends React.Component<BookProps, BookState> {
   state: BookState;
@@ -39,6 +40,9 @@ class Book extends React.Component<BookProps, BookState> {
           <h2 className='title'>{this.props.title}</h2>
           <h3 className='author'>{this.props.author}</h3>
         </div>
+        <Link  to={`/bookshelf/details${this.props.id}`}>
+        <button className='detailsBtn' ></button>
+        </Link>
       </article>
     )
   }
