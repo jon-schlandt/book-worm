@@ -2,6 +2,7 @@ import './Book.css'
 import React from 'react'
 import { BookProps, BookState } from '../../util/types'
 import { Link } from 'react-router-dom'
+// import Details from '../Details/Details'
 
 class Book extends React.Component<BookProps, BookState> {
   state: BookState;
@@ -14,6 +15,10 @@ class Book extends React.Component<BookProps, BookState> {
 
   onClick = () => {
     this.updateFavorite()
+  }
+
+  sendId = () => {
+
   }
 
   updateFavorite = () => {
@@ -33,7 +38,7 @@ class Book extends React.Component<BookProps, BookState> {
     <article className='bookCard'>
         <span>
           <p className='rank'>Rank: {this.props.rank}</p>
-          <button className='favoritesBtn' onClick={ () => this.onClick()}>{buttonText}</button>
+          <button className='favoritesBtn' onClick={ () => this.updateFavorite()}>{buttonText}</button>
         </span>
         <img className='bookImg' src={this.props.bookImage} alt='Book Cover'/>
         <div className='bookDetails'>
@@ -41,7 +46,7 @@ class Book extends React.Component<BookProps, BookState> {
           <h3 className='author'>{this.props.author}</h3>
         </div>
         <Link  to={`/bookshelf/details${this.props.id}`}>
-        <button className='detailsBtn' ></button>
+        <button className='detailsBtn' onClick={ () => this.sendId() } >Details</button>
         </Link>
       </article>
     )
