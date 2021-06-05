@@ -36,7 +36,7 @@ export const cleanBookData = (bookData: BookData) => {
       author: book.author,
       bookImage: book.book_image,
       amazonProductUrl: book.amazon_product_url,
-      id: book.book_uri
+      id: book.book_uri.split('nyt://book/')[1]
     }
   })
   return cleanedBookData
