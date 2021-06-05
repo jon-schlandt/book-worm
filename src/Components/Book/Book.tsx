@@ -13,14 +13,6 @@ class Book extends React.Component<BookProps, BookState> {
     }
   }
 
-  onClick = () => {
-    this.updateFavorite()
-  }
-
-  sendId = () => {
-    this.props.findBookDetails()
-  }
-
   updateFavorite = () => {
     if(!this.state.favorite) {
       this.setState({ favorite: true }, () => this.props.handleClick(this.props.id, this.state.favorite))
@@ -46,7 +38,7 @@ class Book extends React.Component<BookProps, BookState> {
           <h3 className='author'>{this.props.author}</h3>
         </div>
         <Link  to={`/bookshelf/details${this.props.id}`}>
-        <button className='detailsBtn' onClick={ () => this.sendId() } >Details</button>
+        <button className='detailsBtn' onClick={ () => this.props.findBookDetails(this.props.id) } >Details</button>
         </Link>
       </article>
     )
