@@ -18,7 +18,7 @@ class Book extends React.Component<BookProps, BookState> {
   }
 
   sendId = () => {
-
+    this.props.findBookDetails()
   }
 
   updateFavorite = () => {
