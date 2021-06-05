@@ -1,0 +1,23 @@
+.detailsArticle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #790237;
+}
+
+.detailsContainer {
+    background: rgba(245, 241, 225, 0.73);
+}
+
+.detailsTitle {
+    font-size: 50px;
+}
+
+.detailsContainer > p {
+    font-size: 30px;
+}
+
+.detailsAmzLink {
+    font-size: 30px;
+    color: cyan;
+}
