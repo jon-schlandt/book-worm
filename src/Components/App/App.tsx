@@ -16,7 +16,16 @@ class App extends React.Component<{}, AppState> {
       list: [],
       error: '',
       favorites: [],
-      currentBook: {}
+      currentBook: {
+        rank: 0,
+        publisher: '',
+        description: '',
+        title: '',
+        author: '',
+        bookImage: '',
+        amazonProductUrl: '',
+        id: ''
+      }
     }
   }
 
@@ -90,6 +99,7 @@ class App extends React.Component<{}, AppState> {
 
           <Route exact path='/bookshelf/details/:id'
             render={ () => {
+              if(Object.keys(this.state.currentBook).length) {
               return (
                 <Details 
                 info={this.state.currentBook}
@@ -97,8 +107,9 @@ class App extends React.Component<{}, AppState> {
               )
             }
             }
+            }
           />
-           
+          
 
           <Route
             render={() => <Error message='Sorry, page not found!' />}
