@@ -9,10 +9,10 @@ const Details = (props: DetailsProps) => {
         <img className='bookImg' src={props.info.bookImage} alt='Book Cover'/>
             <div className='detailsContainer'>
                 <h1 className='detailsTitle'>{props.info.title}</h1>
-                <p className='detailsAuthor'>By {props.info.author}</p>
+                <h2 className='detailsAuthor'>By {props.info.author}</h2>
                 <p className='detailsPublisher'>Publisher: {props.info.publisher}</p>
                 <p className='detailsDescription'>Description: {props.info.description}</p>
-                <p className='detailsRank'>rank: {props.info.rank}</p>
+                <p className='detailsRank'>Rank: {props.info.rank}</p>
                 <a className='detailsAmzLink' href={props.info.amazonProductUrl}>Amazon Link</a>
             </div>
         </article>
