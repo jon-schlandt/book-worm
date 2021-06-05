@@ -1,23 +1,41 @@
 .detailsArticle {
+    margin-top: 5%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
     color: #790237;
 }
 
 .detailsContainer {
+    padding: 5%;
+    border-radius: 25px;
     background: rgba(245, 241, 225, 0.73);
+    max-width: 700px;
 }
 
 .detailsTitle {
+    border-bottom: solid 1px #790237 ;
     font-size: 50px;
+    margin-bottom: 6%;
 }
 
 .detailsContainer > p {
     font-size: 30px;
+    padding: 8px;
+}
+
+.detailsRank, 
+.detailsPublisher,
+.detailsDescription {
+    font-weight: bolder;
+}
+
+.detailsAuthor {
+    font-size: 40px;
+    font-weight: bolder;
 }
 
 .detailsAmzLink {
     font-size: 30px;
-    color: cyan;
+    color: blue;
 }
