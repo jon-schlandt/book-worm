@@ -21,15 +21,9 @@ export interface BookshelfProps  {
     addToFavorites?: (book: SingleBook, state: boolean) => void
 }
 
-export interface SingleBook {
-    rank: number,
-    publisher: string,
-    description: string,
-    title: string,
-    author: string,
-    bookImage: string,
-    amazonProductUrl: string,
-    id: string
+export interface BookshelfState {
+  books: SingleBook[],
+  error: string
 }
 
 export interface BookProps {
@@ -46,7 +40,13 @@ export interface BookState {
     favorite: boolean
 }
 
-export interface BookshelfState {
-    books: SingleBook[],
-    error: string
+export interface SingleBook {
+  rank: number,
+  publisher: string,
+  description: string,
+  title: string,
+  author: string,
+  bookImage: string,
+  amazonProductUrl: string,
+  id: string
 }
