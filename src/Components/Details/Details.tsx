@@ -18,7 +18,7 @@ const Details = (props: DetailsProps) => {
                 }
                 <p className='detailsRank'>Rank: {props.info.rank}</p>
                 {props.info.amazonProductUrl &&
-                <a className='detailsAmzLink' href={props.info.amazonProductUrl}>Amazon Link</a>
+                <a className='detailsAmzLink' target='_blank' href={props.info.amazonProductUrl}>Amazon Link</a>
                 }
             </div>
         </article>
