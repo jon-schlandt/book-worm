@@ -38,7 +38,7 @@
 ## Technologies Used - Sarah
 - ...
   
-## Setup Instructions - Jon
+## Setup Instructions
 ### For viewing the application:
 1. In your terminal, run `https://github.com/jon-schlandt/book-worm.git` to clone the repo
 3. `cd` into the root directory of the project
@@ -61,6 +61,9 @@
 ##### Jon
 
 ## Future Iterations - Jon
+After reaching the minimum viable product we established for this project, we attempted to extend the capabilities of BookWorm by adding a feature for displaying additional details for a given book. A 'Details' button was added to each book and once clicked a separate page with more information about the associated book would render. Although we made a lot of progress on this feature, we feel that what we currently have is not complete enough for production - the work we did can be found on this [branch](https://github.com/jon-schlandt/book-worm/tree/feature/details). 
+
+We hope to continue work on this feature and possibly add more features, like a search bar for category filtering, to provide a more enjoyable and efficient user experience.
 
 ## Credits
 #### Authors
