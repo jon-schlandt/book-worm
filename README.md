@@ -39,7 +39,13 @@
 - ...
   
 ## Setup Instructions - Jon
-1. 
+For viewing application: 
+1. In your terminal, run `https://github.com/jon-schlandt/book-worm.git` to clone the repo
+3. `cd` into the root directory of the project
+4. Run `npm i` to install dependencies
+5. Run `npm start` to start the web server
+6. If a browser window does not automatically open, open your web browser and navigate to `http://localhost:3001` to access the application
+
 
 ## Project Reflection and Individual Learning Goals
 ##### Sarah 
