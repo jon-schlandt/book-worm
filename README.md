@@ -28,7 +28,7 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 
 ## Learning Goals
 - Self-teach a brand new technology utilizing resources and problem-solving skills
-- Familiarize ourselves with TypeScript and implement into application code
+- Familiarize ourselves with TypeScript and implement into project code
 - Enhance our understanding of React, React Router, and Cypress
 
 ## Features - Andrew
@@ -53,7 +53,8 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 1.
 
 ## Project Reflection and Individual Learning Goals
-##### Sarah
+##### Sarah  
+- This project helped reassure me that I am capable of learning a new technology in a short amount of time with efficiency.  In a work environment, I will be able to use my problem-solving skills to conquer challenges.  TypeScript proved to be a very useful technology, and I'm so glad we chose to explore it now and overcome the learning curve that comes with it!  My goals, in addition to learning TypeScript, were to improve my CSS skills and create dynamic and DRY code.  I feel I achieved those goals!
 
 ##### Andrew
 
