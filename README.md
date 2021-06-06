@@ -20,27 +20,30 @@
 
 ## Overview - Sarah
 
+BookWorm is an application designed for book lovers to view the New York Times Bestsellers and pick their next book to read! Book lovers are able to search by genre and add and remove books from a list of their favorites!  For this project, we were to choose a new technology to self-teach and incorporate into our code.  Our group decided on TypeScript!
+
+
 ![Screen Shot 2021-06-06 at 6 32 36 PM](https://user-images.githubusercontent.com/27929330/120942237-942a0100-c6f5-11eb-9cff-eeab6dd6241b.png)
 
-- Deployed [LINK]()
-- Project Spec
+- Deployed [LINK](https://bookworm-2102.herokuapp.com/)
+- Project Spec [LINK](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Learning Goals - Sarah
 - ...
 
 ## Features - Andrew
-- When the application is launched, a user will see a list of book types they can chose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorted any books yet. On the home page, a user can select a type of books and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they chose. 
+- When the application is launched, a user will see a list of book types they can chose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorted any books yet. On the home page, a user can select a type of books and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they chose.
 
 
 
 ## Technologies Used - Sarah
 - ...
-  
+
 ## Setup Instructions - Jon
-1. 
+1.
 
 ## Project Reflection and Individual Learning Goals
-##### Sarah 
+##### Sarah
 
 ##### Andrew
 
