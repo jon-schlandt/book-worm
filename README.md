@@ -20,12 +20,7 @@
 
 ## Overview - Sarah
 
-<table>
-  <td>
-    <img src="assests/accessibility.png" alt="accessibility score"
-      width="110" height="130" />
-  </td>
-</table>
+![Screen Shot 2021-06-06 at 6 32 36 PM](https://user-images.githubusercontent.com/27929330/120942237-942a0100-c6f5-11eb-9cff-eeab6dd6241b.png)
 
 - Deployed [LINK]()
 - Project Spec
