@@ -34,6 +34,9 @@
 - ...
 
 ## Features - Andrew
+- When the application is launched, a user will see a list of book types they can chose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorted any books yet. On the home page, a user can select a type of books and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they chose. 
+
+
 
 ## Technologies Used - Sarah
 - ...
