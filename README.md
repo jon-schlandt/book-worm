@@ -48,14 +48,14 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 * ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 ## Setup Instructions
-### For viewing the application:
+#### For viewing the application:
 1. In your terminal, run `https://github.com/jon-schlandt/book-worm.git` to clone the repo
 3. `cd` into the root directory of the project
 4. Run `npm i` to install dependencies
 5. Run `npm start` to start the web server
 6. If a browser window does not automatically open, open your web browser and navigate to `http://localhost:3000` to access the application
 
-### For testing the application:
+#### For testing the application:
 1. In your terminal, run `https://github.com/jon-schlandt/book-worm.git` to clone the repo
 3. `cd` into the root directory of the project
 4. Run `npm i` to install dependencies
