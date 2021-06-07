@@ -31,10 +31,8 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 - Familiarize ourselves with TypeScript and implement into project code
 - Enhance our understanding of React, React Router, and Cypress
 
-## Features - Andrew
+## Features
 - When the application is launched, a user will see a list of book types they can chose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorted any books yet. On the home page, a user can select a type of books and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they chose.
-
-
 
 ## Technologies Used
 * ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -71,14 +69,7 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 ##### Andrew
 
 ##### Jon
-Learning Goals:
-- Learning TypeScript and successfully building a React application using it was by far my biggest goal. Secondarily, I'd hoped to gain a better understanding of how I learn when looking into a new technology without the structure of guided lectures. 
-
-Challenges:
-- Although TypeScript is essentially JavaScript with an extra bit of syntax, implementing it correctly can be a tedious task. When following a strict TypeScript configuration, errors are consistent and their messages can be difficult to understand when seeing them for the first time. 
-
-Wins:
-- Getting through the challenges of TypeScript and building an application that uses it efficiently and accurately (with no shortcuts) is a huge accomplishment. Also, understanding the benefits of TypeScript and having the capacity to explain why a dev team would use it.
+- Learning TypeScript and successfully building a React application using it was by far my biggest goal. Secondarily, I'd hoped to gain a better understanding of how I learn when looking into a new technology without the structure of guided lectures. Although TypeScript is essentially JavaScript with an extra bit of syntax, implementing it correctly can be a tedious task. Getting through the challenges of TypeScript and building an application that uses it efficiently and accurately (with no shortcuts) is a huge accomplishment. Also, understanding the benefits of TypeScript and having the capacity to explain why a dev team would use it.
 
 ## Future Iterations
 After reaching the minimum viable product we established for this project, we attempted to extend the capabilities of BookWorm by adding a feature for displaying additional details for a given book. A 'Details' button was added to each book and once clicked a separate page with more information about the associated book would render. Although we made a lot of progress on this feature, we feel what we currently have is not complete enough for production - the work we did can be found on this [branch](https://github.com/jon-schlandt/book-worm/tree/feature/details). 
