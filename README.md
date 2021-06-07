@@ -51,12 +51,9 @@ When the application is launched, a user will see a list of book categories they
 6. If a browser window does not automatically open, open your web browser and navigate to `http://localhost:3000` to access the application
 
 #### For testing the application:
-1. Open your terminal and access the directory you want to place this project in
-2. Run `git clone https://github.com/jon-schlandt/book-worm.git` to clone the repo
-3. `cd` into the root directory of the project
-4. Run `npm i` to install dependencies
-5. Run `npx cypress open` to open the Cypress testing GUI
-6. Click on an integration test and allow the test to run
+After completing the steps above to clone the repo:  
+1. Run `npx cypress open` to open the Cypress testing GUI
+2. Click on an integration test and allow the test to run
 
 <img src="https://user-images.githubusercontent.com/75702270/121049277-c9c1ff00-c774-11eb-9f2b-58e21dee5bab.png" alt="Cypress integration test selection"
  width="500px" height="auto" />
