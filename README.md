@@ -68,7 +68,7 @@ For this project, we chose a brand new technology to self-teach and incorporate 
   <tr>
     <td></td>
     <td> Jon Schlandt <a href="https://github.com/jon-schlandt">GH</td>
-    <td></td>
+    <td> Sarah Lane <a hef="https://github.com/sarahlane8">GH</td>
   </tr>
   <td>
   </td>  
@@ -77,6 +77,7 @@ For this project, we chose a brand new technology to self-teach and incorporate 
   width="150" height="auto" />
   </td>
   <td>
+  <img width="150" height="auto" src="https://user-images.githubusercontent.com/70901622/120944450-cafe1800-c6f1-11eb-96f2-5e18fdb2a96e.png" alt="Sarah's GH img">
   </td>
 </table>
 
