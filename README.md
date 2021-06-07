@@ -31,12 +31,10 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 - Familiarize ourselves with TypeScript and implement into project code
 - Enhance our understanding of React, React Router, and Cypress
 
-## Features - Andrew
+## Features
 - When the application is launched, a user will see a list of book types they can chose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorted any books yet. On the home page, a user can select a type of books and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they chose.
 
-
-
-## Technologies Used - Sarah
+## Technologies Used
 * ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 * ![React-Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
@@ -49,8 +47,25 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 
 * ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## Setup Instructions - Jon
-1.
+## Setup Instructions
+#### For viewing the application:
+1. Open your terminal and access the directory you want to place this project in
+2. Run `git clone https://github.com/jon-schlandt/book-worm.git` to clone the repo
+3. `cd` into the root directory of the project
+4. Run `npm i` to install dependencies
+5. Run `npm start` to start the web server
+6. If a browser window does not automatically open, open your web browser and navigate to `http://localhost:3000` to access the application
+
+#### For testing the application:
+1. Open your terminal and access the directory you want to place this project in
+2. Run `git clone https://github.com/jon-schlandt/book-worm.git` to clone the repo
+3. `cd` into the root directory of the project
+4. Run `npm i` to install dependencies
+5. Run `npx cypress open` to open the Cypress testing GUI
+6. Click on an integration test and allow the test to run
+
+<img src="https://user-images.githubusercontent.com/75702270/121049277-c9c1ff00-c774-11eb-9f2b-58e21dee5bab.png" alt="Leta's GH img"
+ width="460px" height="auto" />
 
 ## Project Reflection and Individual Learning Goals
 ##### Sarah  
@@ -59,8 +74,12 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 ##### Andrew
 
 ##### Jon
+- Learning TypeScript and successfully building a React application using it was by far my biggest goal. Secondarily, I'd hoped to gain a better understanding of how I learn when looking into a new technology without the structure of guided lectures. Although TypeScript is essentially JavaScript with an extra bit of syntax, implementing it correctly can be a tedious task. Getting through the challenges of TypeScript and building an application that uses it efficiently and accurately (with no shortcuts) is a huge accomplishment.
 
-## Future Iterations - Jon
+## Future Iterations
+After reaching the minimum viable product we established for this project, we attempted to extend the capabilities of BookWorm by adding a feature for displaying additional details for a given book. A 'Details' button was added to each book and once clicked a separate page with more information about the associated book would render. Although we made a lot of progress on this feature, we feel what we currently have is not complete enough for production - the work we did can be found on this [branch](https://github.com/jon-schlandt/book-worm/tree/feature/details). 
+
+We hope to continue work on this feature and possibly add more features, like a search bar for category filtering, to provide a more enjoyable and efficient user experience.
 
 ## Credits
 #### Authors
