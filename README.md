@@ -64,7 +64,7 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 5. Run `npx cypress open` to open the Cypress testing GUI
 6. Click on an integration test and allow the test to run
 
-<img src="https://user-images.githubusercontent.com/75702270/121049277-c9c1ff00-c774-11eb-9f2b-58e21dee5bab.png" alt="Leta's GH img"
+<img src="https://user-images.githubusercontent.com/75702270/121049277-c9c1ff00-c774-11eb-9f2b-58e21dee5bab.png" alt="Cypress integration test selection"
  width="460px" height="auto" />
 
 ## Project Reflection and Individual Learning Goals
