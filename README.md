@@ -85,11 +85,13 @@ We hope to continue work on this feature and possibly add more features, like a 
 #### Authors
 <table>
   <tr>
-    <td></td>
+    <td> Andrew Carlin <a href="https://github.com/AndieDrew">GH</td>
     <td> Jon Schlandt <a href="https://github.com/jon-schlandt">GH</td>
     <td> Sarah Lane <a hef="https://github.com/sarahlane8">GH</td>
   </tr>
   <td>
+     <img src="https://avatars.githubusercontent.com/u/27929330?v=4" alt="Andrew's' GH img"
+  width="150" height="auto" />
   </td>  
   <td>
     <img src="https://avatars.githubusercontent.com/u/75702270?v=4" alt="Jon's' GH img"
