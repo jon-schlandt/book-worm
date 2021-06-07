@@ -64,6 +64,9 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 5. Run `npx cypress open` to open the Cypress testing GUI
 6. Click on an integration test and allow the test to run
 
+<img src="https://user-images.githubusercontent.com/75702270/121049277-c9c1ff00-c774-11eb-9f2b-58e21dee5bab.png" alt="Leta's GH img"
+ width="460px" height="auto" />
+
 ## Project Reflection and Individual Learning Goals
 ##### Sarah  
 - This project helped reassure me that I am capable of learning a new technology in a short amount of time with efficiency.  In a work environment, I will be able to use my problem-solving skills to conquer challenges.  TypeScript proved to be a very useful technology, and I'm so glad we chose to explore it now and overcome the learning curve that comes with it!  My goals, in addition to learning TypeScript, were to improve my CSS skills and create dynamic and DRY code.  I feel I achieved those goals!
