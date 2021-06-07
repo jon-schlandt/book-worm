@@ -1,25 +1,20 @@
 # BookWorm
 
 ### Table of Contents
-- [BookWork](#bookworm)
-    - [Table of Contents](#table-of-contents)
+- [BookWorm](#bookworm)
   - [Overview](#overview)
   - [Learning Goals](#learning-goals)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Setup Instructions](#setup-instructions)
-  - [Project Reflection](#project-reflection)
-        - [Wins](#wins)
-        - [Challenges](#challenges)
-        - [Overall Impressions](#overall-impressions)
-        - [Future Features](#future-features)
+  - [Project Reflection](#project-reflection-and-individual-learning-goals)
+  - [Future Iterations](#future-iterations)
   - [Credits](#credits)
       - [Authors](#authors)
       - [Project Managers](#project-managers)
-        - [2021/05/25](#20210525)
 
 ## Overview
-For this project, we chose a brand new technology to self-teach and incorporate into our code.  Our group utilized TypeScript to design BookWorm, an application designed for book lovers to view the New York Times Bestsellers and pick their next book to read! Book lovers are able to search by genre and add and remove books from a list of their favorites!  
+For this project, we chose a brand new technology to self-teach and incorporate into our code.  Our team utilized TypeScript to design BookWorm, an application designed for book lovers to view the New York Times Best Sellers and pick their next book to read! Book lovers are able to search by genre and add and remove books from a list of their favorites!  
 
 ![Screen Shot 2021-06-06 at 6 32 36 PM](https://user-images.githubusercontent.com/27929330/120942237-942a0100-c6f5-11eb-9cff-eeab6dd6241b.png)
 
@@ -32,7 +27,8 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 - Enhance our understanding of React, React Router, and Cypress
 
 ## Features
-- When the application is launched, a user will see a list of book types they can chose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorted any books yet. On the home page, a user can select a type of books and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they chose.
+When the application is launched, a user will see a list of book categories they can choose from, and a navigation bar with a home and favorite button. The user can click on home to come back to this page at any time, and if the user clicks on favorites they will see a message indicating they haven't favorited any books yet. On the home page, the user can select a category and will be brought to the bookshelf page where they can favorite or unfavorite books. Once books have been favorited, the user can navigate to the favorites page to see a list of all their favorite books where they can remove some if they choose.  
+![Demo of Features](https://media.giphy.com/media/M4IbuJbc3PJqq4lRUm/giphy.gif)
 
 ## Technologies Used
 * ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -76,8 +72,8 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 - Learning TypeScript and successfully building a React application using it was by far my biggest goal. Secondarily, I'd hoped to gain a better understanding of how I learn when looking into a new technology without the structure of guided lectures. Although TypeScript is essentially JavaScript with an extra bit of syntax, implementing it correctly can be a tedious task. Getting through the challenges of TypeScript and building an application that uses it efficiently and accurately (with no shortcuts) is a huge accomplishment.
 
 ## Future Iterations
-After reaching the minimum viable product we established for this project, we attempted to extend the capabilities of BookWorm by adding a feature for displaying additional details for a given book. A 'Details' button was added to each book and once clicked a separate page with more information about the associated book would render. Although we made a lot of progress on this feature, we feel what we currently have is not complete enough for production - the work we did can be found on this [branch](https://github.com/jon-schlandt/book-worm/tree/feature/details). 
-
+After reaching the minimum viable product we established for this project, we attempted to extend the capabilities of BookWorm by adding a feature for displaying additional details for a given book. A 'Details' button was added to each book and once clicked a separate page with more information about the associated book would render. Although we made a lot of progress on this feature, we feel what we currently have is not complete enough for production - the work we did can be found on this [branch](https://github.com/jon-schlandt/book-worm/tree/feature/details).  
+![Details Page Demo](https://media.giphy.com/media/1UNyblatGZ0AgElWjH/giphy.gif)  
 We hope to continue work on this feature and possibly add more features, like a search bar for category filtering, to provide a more enjoyable and efficient user experience.
 
 ## Credits
@@ -86,7 +82,7 @@ We hope to continue work on this feature and possibly add more features, like a 
   <tr>
     <td> Andrew Carlin <a href="https://github.com/AndieDrew">GH</td>
     <td> Jon Schlandt <a href="https://github.com/jon-schlandt">GH</td>
-    <td> Sarah Lane <a hef="https://github.com/sarahlane8">GH</td>
+    <td> Sarah Lane <a href="https://github.com/sarahlane8">GH</td>
   </tr>
   <td>
      <img src="https://avatars.githubusercontent.com/u/27929330?v=4" alt="Andrew's' GH img"
