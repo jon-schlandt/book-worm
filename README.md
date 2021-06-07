@@ -41,8 +41,6 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 
 * ![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 
-* ![Webpack](https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black)
-
 * ![Cypress](https://img.shields.io/badge/cypress-04C38E.svg?&style=for-the-badge&logo=cypress&logoColor=white)
 
 * ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -72,6 +70,7 @@ For this project, we chose a brand new technology to self-teach and incorporate 
 - This project helped reassure me that I am capable of learning a new technology in a short amount of time with efficiency.  In a work environment, I will be able to use my problem-solving skills to conquer challenges.  TypeScript proved to be a very useful technology, and I'm so glad we chose to explore it now and overcome the learning curve that comes with it!  My goals, in addition to learning TypeScript, were to improve my CSS skills and create dynamic and DRY code.  I feel I achieved those goals!
 
 ##### Andrew
+- I was excited to learn TypeScript and see why it's held in such high regards. This project touched on most of the talking points I heard about TypeScript. It's got a learning curve, takes some time to setup, makes you write more code that isn't necessary, but after that you start to notice the long term benefits. There was multiple occasions where TypeScript pointed out a bug that could have gone unnoticed until we ran the application or even worse, deployed. I'm glad I got to learn this new skill that I can continue to practice on my future projects. Ultimately my goal was to come out of this project feeling like I have a strong understanding of TypeScript fundamentals and I achieved that goal. 
 
 ##### Jon
 - Learning TypeScript and successfully building a React application using it was by far my biggest goal. Secondarily, I'd hoped to gain a better understanding of how I learn when looking into a new technology without the structure of guided lectures. Although TypeScript is essentially JavaScript with an extra bit of syntax, implementing it correctly can be a tedious task. Getting through the challenges of TypeScript and building an application that uses it efficiently and accurately (with no shortcuts) is a huge accomplishment.
