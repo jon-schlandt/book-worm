@@ -25,6 +25,7 @@
     "eject": "react-scripts eject",
     "cy:run": "cypress run"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
